@@ -10,6 +10,11 @@ public class Magazijn
 	private Vrachtwagen[] vrachtwagen;
 
 	private InMagazijn[] inMagazijn;
+	
+	public Magazijn()
+	{
+		// TODO Auto-generated constructor stub
+	}
 
 	public void Uitladen(ArrayList prodNrs)
 	{

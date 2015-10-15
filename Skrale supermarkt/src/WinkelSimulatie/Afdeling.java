@@ -10,6 +10,11 @@ public class Afdeling
 	private Medewerker medewerker;
 
 	private InAfdeling inAfdeling;
+	
+	public Afdeling() 
+	{
+		// TODO Auto-generated constructor stub
+	}
 
 	public boolean requestProduct(int prodNr, int aantal) 
 	{

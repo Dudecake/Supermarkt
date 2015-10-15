@@ -12,5 +12,10 @@ public class Product
 	private InPad inPad;
 
 	private InAfdeling inAfdeling;
+	
+	public Product()
+	{
+		// TODO Auto-generated constructor stub
+	}
 
 }

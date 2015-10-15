@@ -8,6 +8,11 @@ public class InVoordeelPad
 	private VoordeelPad voordeelPad;
 
 	private Product product;
+	
+	public InVoordeelPad()
+	{
+		// TODO Auto-generated constructor stub
+	}
 
 	public void vultBij(int prodNr, int aantal)
 	{

@@ -8,6 +8,11 @@ public class Pad
 	private Controller controller;
 
 	private InPad[] inPad;
+	
+	public Pad()
+	{
+		// TODO Auto-generated constructor stub
+	}
 
 	public boolean requestProduct(int prodNr, int aantal)
 	{

@@ -8,5 +8,10 @@ public class InMagazijn
 	private Magazijn magazijn;
 
 	private Product product;
+	
+	public InMagazijn()
+	{
+		// TODO Auto-generated constructor stub
+	}
 
 }

@@ -17,6 +17,11 @@ public class Controller
 	private Magazijn magazijn;
 
 	private Main main;
+	
+	public Controller() 
+	{
+		// TODO Auto-generated constructor stub
+	}
 
 	public void tisOp(int prodNr) 
 	{

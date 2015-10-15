@@ -6,14 +6,16 @@ import java.util.Map;
 public class Klant
 {
 
-	private Winkelwagen winkelwagen = new Winkelwagen();
+	private Winkelwagen winkelwagen;
 	private Controller controller;
 	
-	Map<Integer, Integer> boodschappenLijstje = new HashMap<Integer, Integer>();
+	Map<Integer, Integer> boodschappenLijstje;
 	
 	public Klant(Controller c)
 	{
 		controller = c;
+		winkelwagen = new Winkelwagen();
+		boodschappenLijstje = new HashMap<Integer,Integer>();
 	}
 
 	public void WilProductPakken(int prodNr, int aantal)
