@@ -26,4 +26,8 @@ public class Main
 
 	}
 
+	private void NieuweKlant()
+	{
+		
+	}
 }
