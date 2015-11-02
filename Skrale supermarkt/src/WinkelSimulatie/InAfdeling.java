@@ -6,17 +6,12 @@ import java.util.Map;
 public class InAfdeling
 {
 
-	private Integer aantal;
-
 	private Afdeling afdeling;
-
-	private Product product;
 	
 	Map<Integer, Float> inhoud;
 	
-	public InAfdeling(Afdeling a) 
+	public InAfdeling() 
 	{
-		afdeling = a;
 		inhoud = new HashMap<Integer, Float>();
 	}
 
@@ -28,12 +23,20 @@ public class InAfdeling
 	public Boolean CheckProduct(int prodNr, int aantal)
 	{
 		float hoeveel = inhoud.get(prodNr);
-		return false;
+		if (hoeveel>Float.intBitsToFloat(aantal))
+		{
+			return true;
+		} else
+		{
+			return false;
+		}
 	}
 	
 	public void productGepakt(int prodNr, int aantal)
 	{
-
+		float aantalHuidig = inhoud.get(prodNr);
+		float resterend = aantalHuidig-Float.intBitsToFloat(aantal);
+		inhoud.put(prodNr, resterend);
 	}
 
 }

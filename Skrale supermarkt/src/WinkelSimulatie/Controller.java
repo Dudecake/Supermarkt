@@ -20,7 +20,7 @@ public class Controller
 	
 	public Controller() 
 	{
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void tisOp(int prodNr) 
@@ -33,24 +33,25 @@ public class Controller
 
 	}
 
-	public Boolean PaktProduct(int prodNr, int aantal) 
+	public boolean PaktProduct(int prodNr, int aantal) 
 	{
 		boolean uitkomst = false;
 		char[] prod = Integer.toString(prodNr).toCharArray();
 		if(prod.length > 1)
 		{
-			switch (prod[1]) {
-			case '1':
-				uitkomst = afdeling.requestProduct(prodNr, aantal);
-				break;
-			case '2':
-				uitkomst = pad.requestProduct(prodNr, aantal);
-				break;
-			case '3':
-				uitkomst = voordeelPad.requestProduct(prodNr, aantal);
-				break;
-			default:
-				return false;
+			switch (prod[1]) 
+			{
+				case '1':
+					uitkomst = afdeling.requestProduct(prodNr, aantal); // tak is compleet, deze haalt ook meteen product uit de schappen
+					break;
+				case '2':
+					uitkomst = pad.requestProduct(prodNr, aantal); // tak is compleet
+					break;
+				case '3':
+					uitkomst = voordeelPad.requestProduct(prodNr, aantal); // tak is compleet
+					break;
+				default:
+					return false;
 			}
 		}
 		return uitkomst;

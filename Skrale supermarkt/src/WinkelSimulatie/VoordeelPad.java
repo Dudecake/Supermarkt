@@ -5,16 +5,23 @@ public class VoordeelPad
 
 	private Controller controller;
 
-	private InVoordeelPad[] inVoordeelPad;
+	private InVoordeelPad inVoordeelPad;
 	
 	public VoordeelPad()
 	{
-		// TODO Auto-generated constructor stub
+		inVoordeelPad = new InVoordeelPad();
 	}
 
 	public boolean requestProduct(int prodNr, int aantal)
 	{
-		return false;
+		if (inVoordeelPad.CheckProduct(prodNr, aantal))
+		{
+			inVoordeelPad.productGepakt(prodNr, aantal);
+			return true;
+		} else
+		{
+			return false;
+		} 
 	}
 
 	public void VulBij()

@@ -13,12 +13,19 @@ public class Afdeling
 	
 	public Afdeling() 
 	{
-		// TODO Auto-generated constructor stub
+		inAfdeling = new InAfdeling();
 	}
 
 	public boolean requestProduct(int prodNr, int aantal) 
 	{
-		return inAfdeling.CheckProduct(prodNr, aantal);
+		if (inAfdeling.CheckProduct(prodNr, aantal))
+		{
+			inAfdeling.productGepakt(prodNr, aantal);
+			return true;
+		} else
+		{
+			return false;
+		}
 	}
 
 	public void vulBij()

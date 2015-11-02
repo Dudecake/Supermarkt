@@ -15,7 +15,8 @@ public class Winkelwagen
 
 	public void pleurInWinkelwagen(int prodNr, int aantal) 
 	{
-		inhoud.put(prodNr, aantal);
+		
+		inhoud.put(prodNr, (inhoud.get(prodNr)+aantal));
 	}
 
 	public Map<Integer, Integer> getInhoudWinkelwagen() 

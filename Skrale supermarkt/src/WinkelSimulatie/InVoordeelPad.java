@@ -1,27 +1,41 @@
 package WinkelSimulatie;
 
+import java.util.Map;
+
 public class InVoordeelPad
 {
 
-	private Integer aantal;
-
 	private VoordeelPad voordeelPad;
 
-	private Product product;
+	Map<Integer, Integer> inhoud;
 	
 	public InVoordeelPad()
 	{
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void vultBij(int prodNr, int aantal)
 	{
 
 	}
-
-	public void productGepakt(int prodNr, int aantal) 
+	
+	public Boolean CheckProduct(int prodNr, int aantal)
 	{
+		int hoeveel = inhoud.get(prodNr);
+		if (hoeveel>aantal)
+		{
+			return true;
+		} else
+		{
+			return false;
+		}
+	}
 
+	public void productGepakt(int prodNr, int aantal)
+	{
+		int aantalHuidig = inhoud.get(prodNr);
+		int resterend = aantalHuidig-aantal;
+		inhoud.put(prodNr, resterend);
 	}
 
 }

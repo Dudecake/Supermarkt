@@ -7,16 +7,23 @@ public class Pad
 
 	private Controller controller;
 
-	private InPad[] inPad;
+	private InPad inPad;
 	
 	public Pad()
 	{
-		// TODO Auto-generated constructor stub
+		inPad = new InPad();
 	}
 
 	public boolean requestProduct(int prodNr, int aantal)
 	{
-		return false;
+		if (inPad.CheckProduct(prodNr, aantal))
+		{
+			inPad.productGepakt(prodNr, aantal);
+			return true;
+		} else
+		{
+			return false;
+		} 
 	}
 
 	public void vulBij(int prodNr, int aantal)
