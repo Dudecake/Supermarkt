@@ -13,7 +13,7 @@ public class Afdeling
 	
 	public Afdeling() 
 	{
-		// TODO Auto-generated constructor stub
+		inAfdeling = new InAfdeling();
 	}
 
 	public boolean requestProduct(int prodNr, int aantal) 

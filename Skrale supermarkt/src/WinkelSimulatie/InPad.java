@@ -1,13 +1,13 @@
 package WinkelSimulatie;
 
+import java.util.Map;
+
 public class InPad
 {
 
-	private Integer aantal;
-
 	private Pad pad;
-
-	private Product product;
+	
+	Map<Integer, Integer> inhoud;
 	
 	public InPad()
 	{
@@ -17,6 +17,18 @@ public class InPad
 	public void vultBij(int prodNr, int aantal)
 	{
 
+	}
+	
+	public Boolean CheckProduct(int prodNr, int aantal)
+	{
+		int hoeveel = inhoud.get(prodNr);
+		if (hoeveel>aantal)
+		{
+			return true;
+		} else
+		{
+			return false;
+		}
 	}
 
 	public void productGepakt(int prodNr, int aantal)

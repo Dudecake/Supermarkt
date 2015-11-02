@@ -7,16 +7,16 @@ public class Pad
 
 	private Controller controller;
 
-	private InPad[] inPad;
+	private InPad inPad;
 	
 	public Pad()
 	{
-		// TODO Auto-generated constructor stub
+		inPad = new InPad();
 	}
 
 	public boolean requestProduct(int prodNr, int aantal)
 	{
-		return false;
+		return inPad.CheckProduct(prodNr, aantal);
 	}
 
 	public void vulBij(int prodNr, int aantal)
