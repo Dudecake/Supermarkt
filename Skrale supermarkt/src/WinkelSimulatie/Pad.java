@@ -16,7 +16,14 @@ public class Pad
 
 	public boolean requestProduct(int prodNr, int aantal)
 	{
-		return inPad.CheckProduct(prodNr, aantal);
+		if (inPad.CheckProduct(prodNr, aantal))
+		{
+			inPad.productGepakt(prodNr, aantal);
+			return true;
+		} else
+		{
+			return false;
+		} 
 	}
 
 	public void vulBij(int prodNr, int aantal)

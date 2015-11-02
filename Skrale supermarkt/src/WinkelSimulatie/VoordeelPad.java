@@ -14,7 +14,14 @@ public class VoordeelPad
 
 	public boolean requestProduct(int prodNr, int aantal)
 	{
-		return inVoordeelPad.CheckProduct(prodNr, aantal);
+		if (inVoordeelPad.CheckProduct(prodNr, aantal))
+		{
+			inVoordeelPad.productGepakt(prodNr, aantal);
+			return true;
+		} else
+		{
+			return false;
+		} 
 	}
 
 	public void VulBij()

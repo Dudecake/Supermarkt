@@ -31,9 +31,11 @@ public class InVoordeelPad
 		}
 	}
 
-	public void productGepakt(int prodNr, int aantal) 
+	public void productGepakt(int prodNr, int aantal)
 	{
-
+		int aantalHuidig = inhoud.get(prodNr);
+		int resterend = aantalHuidig-aantal;
+		inhoud.put(prodNr, resterend);
 	}
 
 }

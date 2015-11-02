@@ -42,7 +42,7 @@ public class Controller
 			switch (prod[1]) 
 			{
 				case '1':
-					uitkomst = afdeling.requestProduct(prodNr, aantal); // tak is compleet
+					uitkomst = afdeling.requestProduct(prodNr, aantal); // tak is compleet, deze haalt ook meteen product uit de schappen
 					break;
 				case '2':
 					uitkomst = pad.requestProduct(prodNr, aantal); // tak is compleet

@@ -18,7 +18,14 @@ public class Afdeling
 
 	public boolean requestProduct(int prodNr, int aantal) 
 	{
-		return inAfdeling.CheckProduct(prodNr, aantal);
+		if (inAfdeling.CheckProduct(prodNr, aantal))
+		{
+			inAfdeling.productGepakt(prodNr, aantal);
+			return true;
+		} else
+		{
+			return false;
+		}
 	}
 
 	public void vulBij()

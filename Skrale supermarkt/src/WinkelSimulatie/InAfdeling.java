@@ -23,7 +23,7 @@ public class InAfdeling
 	public Boolean CheckProduct(int prodNr, int aantal)
 	{
 		float hoeveel = inhoud.get(prodNr);
-		if (hoeveel>aantal)
+		if (hoeveel>Float.intBitsToFloat(aantal))
 		{
 			return true;
 		} else
@@ -34,7 +34,9 @@ public class InAfdeling
 	
 	public void productGepakt(int prodNr, int aantal)
 	{
-
+		float aantalHuidig = inhoud.get(prodNr);
+		float resterend = aantalHuidig-Float.intBitsToFloat(aantal);
+		inhoud.put(prodNr, resterend);
 	}
 
 }
