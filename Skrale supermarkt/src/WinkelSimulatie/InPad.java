@@ -2,6 +2,7 @@ package WinkelSimulatie;
 
 import java.util.Map;
 
+@SuppressWarnings("all")
 public class InPad
 {
 

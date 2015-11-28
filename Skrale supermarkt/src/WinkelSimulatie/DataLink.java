@@ -1,7 +1,9 @@
 package WinkelSimulatie;
 
 import java.util.ArrayList;
+import java.util.List;
 
+@SuppressWarnings("all")
 public class DataLink 
 {
 
@@ -16,8 +18,18 @@ public class DataLink
 	{
 
 	}
+	
+	public void Mutatie(Product product)
+	{
+		
+	}
+	
+	public void Mutatie(List<Product> products)
+	{
+		for (Product p : products) Mutatie(p);
+	}
 
-	public void afgerekendeProducten(ArrayList producten) 
+	public void afgerekendeProducten(ArrayList<Product> producten) 
 	{
 
 	}

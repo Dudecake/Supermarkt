@@ -1,5 +1,6 @@
 package WinkelSimulatie;
 
+@SuppressWarnings("all")
 public class Product
 {
 
@@ -17,5 +18,14 @@ public class Product
 	{
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	public boolean checkProduct(Integer prodNr)
+	{
+		return this.prodNummer == prodNr;
+	}
+	
+	public int getProdNr()
+	{
+		return prodNummer;
+	}
 }

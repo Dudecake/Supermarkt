@@ -1,5 +1,6 @@
 package WinkelSimulatie;
 
+@SuppressWarnings("all")
 public class Main 
 {
 

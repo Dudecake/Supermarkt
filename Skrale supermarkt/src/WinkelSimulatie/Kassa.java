@@ -2,6 +2,7 @@ package WinkelSimulatie;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("all")
 public class Kassa 
 {
 
@@ -14,7 +15,7 @@ public class Kassa
 		// TODO Auto-generated constructor stub
 	}
 
-	public void inhoudWinkelwagen(ArrayList producten)
+	public void inhoudWinkelwagen(ArrayList<Product> producten)
 	{
 
 	}

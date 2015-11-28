@@ -1,5 +1,6 @@
 package WinkelSimulatie;
 
+@SuppressWarnings("all")
 public class InMagazijn
 {
 
@@ -9,9 +10,11 @@ public class InMagazijn
 
 	private Product product;
 	
-	public InMagazijn()
+	public InMagazijn(Integer aantal, Magazijn magazijn, Product product)
 	{
-		// TODO Auto-generated constructor stub
+		this.aantal = aantal;
+		this.magazijn = magazijn;
+		this.product = product;
 	}
 
 }
