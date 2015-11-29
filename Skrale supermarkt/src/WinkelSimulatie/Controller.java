@@ -37,10 +37,15 @@ public class Controller
 
 	public void ProductAfgeleverd(List<Product> prods) 
 	{
-
+		main.Aangevuld(prods);
+	}
+	
+	public void productAfgerekend(List<Product> prods)
+	{
+		main.afgerekend(prods);
 	}
 
-	public List<Product> PaktProduct(int prodNr, int aantal) 
+	public List<Product> PaktProduct(int prodNr, int aantal)
 	{
 		boolean uitkomst = false;
 		List<Product> res = new ArrayList<>();

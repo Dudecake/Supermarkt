@@ -17,7 +17,7 @@ public class Kassa
 
 	public void inhoudWinkelwagen(ArrayList<Product> producten)
 	{
-
+		controller.productAfgerekend(producten);
 	}
 
 	public void IsUitWinkel(int prodNr, int aantal)

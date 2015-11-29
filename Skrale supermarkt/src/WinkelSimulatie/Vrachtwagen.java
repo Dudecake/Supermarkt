@@ -26,6 +26,7 @@ public class Vrachtwagen
 	public void laadUit()
 	{
 		magazijn.KomtAan(producten);
+		producten.clear();
 	}
 
 }
