@@ -1,7 +1,9 @@
 package WinkelSimulatie;
 
 import java.util.ArrayList;
+import java.util.List;
 
+@SuppressWarnings("all")
 public class Magazijn
 {
 
@@ -11,24 +13,49 @@ public class Magazijn
 
 	private InMagazijn[] inMagazijn;
 	
+	private List<Product> producten;
+	
 	public Magazijn()
 	{
-		// TODO Auto-generated constructor stub
+		this.producten = new ArrayList<>();
 	}
 
-	public void Uitladen(ArrayList prodNrs)
+	public void Uitladen(ArrayList<Integer> prodNrs)
 	{
 
 	}
 
 	public boolean voorraadCheck(int ProdNr, int aantal)
 	{
-		return false;
+		int count = 0;
+		for (Product p : producten)
+		{
+			if (p.checkProduct(ProdNr)) count++;
+		}
+		return count == aantal;
 	}
 
-	public void haalProducten(int prodNr, int aantal)
+	public List<Product> haalProducten(int prodNr, int aantal)
 	{
-
+		int count = 0;
+		List<Product> res = new ArrayList<>();
+		for (int i = 0; i < producten.size(); i++)
+		{
+			if (producten.get(i).checkProduct(prodNr))
+			{
+				res.add(producten.get(i));
+				producten.remove(i);
+				count++; i--;
+			}
+			if (count == prodNr) break;
+		}
+		return res;
+	}
+	
+	public void KomtAan(List<Product> producten)
+	{
+		this.producten.addAll(producten);
+		controller.ProductAfgeleverd(producten);
 	}
 
 	public void KomtAan(int prodNr, int aantal)

@@ -1,8 +1,10 @@
 package WinkelSimulatie;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("all")
 public class Controller 
 {
 
@@ -23,38 +25,52 @@ public class Controller
 		
 	}
 
-	public void tisOp(int prodNr) 
+	public void tisOp(int prodNr)
 	{
 		main.ProductOp(prodNr);
 	}
-
-	public void ProductAfgeleverd(List<Integer> prodNrs) 
+	
+	public void vulBij(int prodNr, int aantal, Object locatie)
 	{
-
+		
 	}
 
-	public boolean PaktProduct(int prodNr, int aantal) 
+	public void ProductAfgeleverd(List<Product> prods) 
+	{
+		main.Aangevuld(prods);
+	}
+	
+	public void productAfgerekend(List<Product> prods)
+	{
+		main.afgerekend(prods);
+	}
+
+	public List<Product> PaktProduct(int prodNr, int aantal)
 	{
 		boolean uitkomst = false;
+		List<Product> res = new ArrayList<>();
 		char[] prod = Integer.toString(prodNr).toCharArray();
 		if(prod.length > 1)
 		{
 			switch (prod[1]) 
 			{
 				case '1':
-					uitkomst = afdeling.requestProduct(prodNr, aantal); // tak is compleet, deze haalt ook meteen product uit de schappen
+					res = afdeling.requestProduct(prodNr, aantal);
+					//uitkomst = afdeling.requestProduct(prodNr, aantal); // tak is compleet, deze haalt ook meteen product uit de schappen
 					break;
 				case '2':
-					uitkomst = pad.requestProduct(prodNr, aantal); // tak is compleet
+					res = afdeling.requestProduct(prodNr, aantal);
+					//uitkomst = pad.requestProduct(prodNr, aantal); // tak is compleet
 					break;
 				case '3':
-					uitkomst = voordeelPad.requestProduct(prodNr, aantal); // tak is compleet
+					res = afdeling.requestProduct(prodNr, aantal);
+					//uitkomst = voordeelPad.requestProduct(prodNr, aantal); // tak is compleet
 					break;
 				default:
-					return false;
+					break;
 			}
 		}
-		return uitkomst;
+		return res;
 	}
 
 	public void inhoudWinkel(Map<Integer, Integer> producten) 

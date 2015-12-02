@@ -1,6 +1,7 @@
 package WinkelSimulatie;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Klant
@@ -20,9 +21,10 @@ public class Klant
 
 	public void WilProductPakken(int prodNr, int aantal)
 	{
-		if(controller.PaktProduct(prodNr, aantal))
+		List<Product> prods = controller.PaktProduct(prodNr, aantal);
+		if(prods.size() != 0)
 		{
-			winkelwagen.pleurInWinkelwagen(prodNr, aantal);
+			winkelwagen.pleurInWinkelwagen(prods);
 		}
 		else 
 		{
