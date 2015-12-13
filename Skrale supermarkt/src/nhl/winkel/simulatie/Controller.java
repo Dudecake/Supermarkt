@@ -1,8 +1,15 @@
-package WinkelSimulatie;
+package nhl.winkel.simulatie;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import nhl.winkel.winkel.Afdeling;
+import nhl.winkel.winkel.Kassa;
+import nhl.winkel.winkel.Magazijn;
+import nhl.winkel.winkel.Pad;
+import nhl.winkel.winkel.Product;
+import nhl.winkel.winkel.VoordeelPad;
 
 @SuppressWarnings("all")
 public class Controller 

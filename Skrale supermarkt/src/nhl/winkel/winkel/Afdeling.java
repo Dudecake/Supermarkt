@@ -1,25 +1,33 @@
-package WinkelSimulatie;
+package nhl.winkel.winkel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import nhl.winkel.personen.Medewerker;
+import nhl.winkel.simulatie.Controller;
+import nhl.winkel.simulatie.SimulatieItem;
+
 @SuppressWarnings("all")
-public class VoordeelPad
+public class Afdeling extends SimulatieItem
 {
+
+	private String naamAfdeling;
 
 	private Controller controller;
 
-	private InVoordeelPad inVoordeelPad;
+	private Medewerker medewerker;
+
+	private InAfdeling inAfdeling;
 	
 	private List<Product> producten;
 	
-	public VoordeelPad()
+	public Afdeling()
 	{
 		producten = new ArrayList<>();
-		inVoordeelPad = new InVoordeelPad();
+		inAfdeling = new InAfdeling();
 	}
 
-	public List<Product> requestProduct(int prodNr, int aantal)
+	public List<Product> requestProduct(int prodNr, int aantal) 
 	{
 		int count = 0;
 		List<Product> res = new ArrayList<>();
@@ -34,9 +42,9 @@ public class VoordeelPad
 			if (count == prodNr) break;
 		}
 		return res;
-		/*if (inVoordeelPad.CheckProduct(prodNr, aantal))
+		/*if (inAfdeling.CheckProduct(prodNr, aantal))
 		{
-			inVoordeelPad.productGepakt(prodNr, aantal);
+			inAfdeling.productGepakt(prodNr, aantal);
 			return true;
 		} else
 		{

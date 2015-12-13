@@ -1,10 +1,14 @@
-package WinkelSimulatie;
+package nhl.winkel.personen;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Klant
+import nhl.winkel.simulatie.Controller;
+import nhl.winkel.winkel.Product;
+import nhl.winkel.winkel.Winkelwagen;
+
+public class Klant extends Persoon
 {
 
 	private Winkelwagen winkelwagen;

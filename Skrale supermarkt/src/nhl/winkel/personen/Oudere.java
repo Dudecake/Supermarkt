@@ -1,4 +1,6 @@
-package WinkelSimulatie;
+package nhl.winkel.personen;
+
+import nhl.winkel.simulatie.Controller;
 
 public class Oudere extends Klant
 {

@@ -1,9 +1,13 @@
-package WinkelSimulatie;
+package nhl.winkel.winkel;
 
 import java.util.ArrayList;
 
+import nhl.winkel.personen.Medewerker;
+import nhl.winkel.simulatie.Controller;
+import nhl.winkel.simulatie.SimulatieItem;
+
 @SuppressWarnings("all")
-public class Kassa 
+public class Kassa extends SimulatieItem
 {
 
 	private Controller controller;

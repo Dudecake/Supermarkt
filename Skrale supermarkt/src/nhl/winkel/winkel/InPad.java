@@ -1,4 +1,4 @@
-package WinkelSimulatie;
+package nhl.winkel.winkel;
 
 import java.util.Map;
 

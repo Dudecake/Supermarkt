@@ -1,8 +1,11 @@
-package WinkelSimulatie;
+package nhl.winkel.simulatie;
 
 import java.util.List;
 
-import WinkelSimulatie.DataLink.Mutatie;
+import nhl.winkel.personen.Klant;
+import nhl.winkel.simulatie.DataLink.Mutatie;
+import nhl.winkel.winkel.Product;
+import nhl.winkel.winkel.Vrachtwagen;
 
 @SuppressWarnings("all")
 public class Main 

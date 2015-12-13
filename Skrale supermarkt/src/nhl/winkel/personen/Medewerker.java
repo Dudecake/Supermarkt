@@ -1,9 +1,16 @@
-package WinkelSimulatie;
+package nhl.winkel.personen;
 
 import java.util.List;
 
+import nhl.winkel.winkel.Afdeling;
+import nhl.winkel.winkel.Kassa;
+import nhl.winkel.winkel.Magazijn;
+import nhl.winkel.winkel.Pad;
+import nhl.winkel.winkel.Product;
+import nhl.winkel.winkel.VoordeelPad;
+
 @SuppressWarnings("all")
-public class Medewerker
+public class Medewerker extends Persoon
 {
 
 	private Afdeling afdeling;

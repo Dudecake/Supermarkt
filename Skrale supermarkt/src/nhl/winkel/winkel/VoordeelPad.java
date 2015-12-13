@@ -1,23 +1,25 @@
-package WinkelSimulatie;
+package nhl.winkel.winkel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("all")
-public class Pad
-{
+import nhl.winkel.simulatie.Controller;
+import nhl.winkel.simulatie.SimulatieItem;
 
-	private String naam;
+@SuppressWarnings("all")
+public class VoordeelPad extends SimulatieItem
+{
 
 	private Controller controller;
 
-	private InPad inPad;
+	private InVoordeelPad inVoordeelPad;
 	
 	private List<Product> producten;
 	
-	public Pad()
+	public VoordeelPad()
 	{
-		inPad = new InPad();
+		producten = new ArrayList<>();
+		inVoordeelPad = new InVoordeelPad();
 	}
 
 	public List<Product> requestProduct(int prodNr, int aantal)
@@ -35,29 +37,24 @@ public class Pad
 			if (count == prodNr) break;
 		}
 		return res;
-		/*if (inPad.CheckProduct(prodNr, aantal))
+		/*if (inVoordeelPad.CheckProduct(prodNr, aantal))
 		{
-			inPad.productGepakt(prodNr, aantal);
+			inVoordeelPad.productGepakt(prodNr, aantal);
 			return true;
 		} else
 		{
 			return false;
 		}*/
 	}
-	
+
 	public void vulBij(List<Product> producten)
 	{
 		this.producten.addAll(producten);
 	}
 
-	public void vulBij(int prodNr, int aantal)
-	{
-		
-	}
-
 	public void tisOp(int prodNr) 
 	{
-
+		controller.tisOp(prodNr);
 	}
 
 }
