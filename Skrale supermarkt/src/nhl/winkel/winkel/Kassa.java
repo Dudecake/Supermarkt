@@ -16,6 +16,7 @@ public class Kassa extends SimulatieItem
 	
 	public Kassa()
 	{
+		id = 'K';
 		// TODO Auto-generated constructor stub
 	}
 

@@ -17,6 +17,7 @@ public class Vrachtwagen extends SimulatieItem
 	
 	public Vrachtwagen(List<Product> producten) 
 	{
+		id = 'W';
 		this.producten = producten;
 		// TODO Auto-generated constructor stub
 	}

@@ -18,6 +18,7 @@ public class VoordeelPad extends SimulatieItem
 	
 	public VoordeelPad()
 	{
+		id = 'V';
 		producten = new ArrayList<>();
 		inVoordeelPad = new InVoordeelPad();
 	}

@@ -6,6 +6,8 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
+import nhl.winkel.simulatie.Main;
+
 @SuppressWarnings("serial")
 public class Surface extends JPanel
 {
@@ -18,6 +20,8 @@ public class Surface extends JPanel
 	{
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setPaint(Color.black);
+		
+		char[][] mat = Main.getInstance().getWinkel();
 	}
 	
 	protected void paintComponent(Graphics g)

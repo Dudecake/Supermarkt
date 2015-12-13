@@ -23,6 +23,7 @@ public class Afdeling extends SimulatieItem
 	
 	public Afdeling()
 	{
+		id = 'A';
 		producten = new ArrayList<>();
 		inAfdeling = new InAfdeling();
 	}

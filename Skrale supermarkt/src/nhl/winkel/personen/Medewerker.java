@@ -21,6 +21,7 @@ public class Medewerker extends Persoon
 	
 	public Medewerker()
 	{
+		id = 'M';
 		// TODO Auto-generated constructor stub
 	}
 

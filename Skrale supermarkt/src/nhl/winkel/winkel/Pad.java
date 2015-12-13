@@ -20,6 +20,7 @@ public class Pad extends SimulatieItem
 	
 	public Pad()
 	{
+		id = 'P';
 		inPad = new InPad();
 	}
 

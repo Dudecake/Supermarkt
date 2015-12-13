@@ -5,6 +5,7 @@ import java.awt.Point;
 public class SimulatieItem
 {
 	protected Point location;
+	protected char id;
 	
 	protected SimulatieItem()
 	{
