@@ -16,6 +16,11 @@ public class Product
 		return this.prodNummer == prodNr;
 	}
 	
+	public String getProdNaam()
+	{
+		return prodNaam;
+	}
+	
 	public int getProdNr()
 	{
 		return prodNummer;

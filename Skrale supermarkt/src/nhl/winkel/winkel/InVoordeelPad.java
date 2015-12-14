@@ -4,7 +4,6 @@ import java.util.Map;
 
 public class InVoordeelPad
 {
-	
 	Map<Integer, Integer> inhoud;
 	
 	public InVoordeelPad()

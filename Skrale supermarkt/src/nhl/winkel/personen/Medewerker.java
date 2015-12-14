@@ -11,11 +11,8 @@ import nhl.winkel.winkel.VoordeelPad;
 
 public class Medewerker extends Persoon
 {
-
 	private Afdeling afdeling;
-
-	private Kassa kassa;
-	
+	private Kassa kassa;	
 	private Magazijn magazijn;
 	
 	public Medewerker()

@@ -10,9 +10,7 @@ import nhl.winkel.simulatie.SimulatieItem;
 
 public class Kassa extends SimulatieItem
 {
-
 	private Controller controller;
-
 	private Medewerker medewerker;
 	
 	public Kassa(Point loc)

@@ -7,9 +7,7 @@ import java.util.HashMap;
 
 public class Winkelwagen
 {
-	
 	Map<Integer, Integer> inhoud;
-	
 	private List<Product> producten;
 	
 	public Winkelwagen() 
@@ -32,5 +30,4 @@ public class Winkelwagen
 	{
 		return inhoud;
 	}
-
 }

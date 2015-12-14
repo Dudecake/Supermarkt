@@ -11,7 +11,6 @@ import nhl.winkel.winkel.Winkelwagen;
 
 public class Klant extends Persoon
 {
-
 	private Winkelwagen winkelwagen;
 	private Controller controller;
 	
@@ -42,5 +41,4 @@ public class Klant extends Persoon
 			//Ren schreeuwend de winkel uit.
 		}
 	}
-
 }

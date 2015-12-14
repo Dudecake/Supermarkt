@@ -14,22 +14,14 @@ import nhl.winkel.winkel.VoordeelPad;
 
 public class Controller 
 {
-
 	private Afdeling[] afdeling;
-
 	private Pad[] pad;
-
 	private Kassa[] kassas;
-
 	private VoordeelPad voordeelPad;
-
 	private Magazijn magazijn;
-
-	private Main main;
 	
 	public Controller() 
 	{
-		main = Main.getInstance();
 		pad = new Pad[] { new Pad(new Point(2, 4)), new Pad(new Point(2, 8)), new Pad(new Point(2, 12)), new Pad(new Point(2, 16))};
 		kassas = new Kassa[] { new Kassa(new Point(3, 22)), new Kassa(new Point(6, 22)), new Kassa(new Point(9, 22)), new Kassa(new Point(12, 22)), new Kassa(new Point(15, 22))};
 		afdeling = new Afdeling[] { new Afdeling(new Point(9, 5)), new Afdeling(new Point(9, 10))};
@@ -40,7 +32,7 @@ public class Controller
 
 	public void tisOp(int prodNr)
 	{
-		main.ProductOp(prodNr);
+		Main.getInstance().ProductOp(prodNr);
 	}
 	
 	public void vulBij(int prodNr, int aantal, Object locatie)
@@ -50,12 +42,12 @@ public class Controller
 
 	public void ProductAfgeleverd(List<Product> prods) 
 	{
-		main.Aangevuld(prods);
+		Main.getInstance().Aangevuld(prods);
 	}
 	
 	public void productAfgerekend(List<Product> prods)
 	{
-		main.afgerekend(prods);
+		Main.getInstance().afgerekend(prods);
 	}
 
 	public List<Product> PaktProduct(int prodNr, int aantal, Object locatie)
@@ -85,28 +77,28 @@ public class Controller
 
 	private void initProducten()
 	{
-		main.producten = new Product[] {
+		Main.getInstance().producten = new Product[] {
 					new Product("kaas",101), new Product("melk",102), 
 					new Product("chocoladepasta",111), new Product("sperziebonen",112), 
 					new Product("pasta",121), new Product("appeltaart",122), 
 					new Product("chips",131), new Product("nootjes",132), 
 					new Product("Ham",201), 
 					new Product("bolletjes",202)};
-		pad[0].vulBij(main.producten[0], 20);
-		pad[0].vulBij(main.producten[1], 20);
-		pad[1].vulBij(main.producten[2], 20);
-		pad[1].vulBij(main.producten[3], 20);
-		pad[2].vulBij(main.producten[4], 20);
-		pad[2].vulBij(main.producten[5], 20);
-		pad[3].vulBij(main.producten[6], 20);
-		pad[3].vulBij(main.producten[7], 20);
-		afdeling[0].vulBij(main.producten[8], 20);
-		afdeling[1].vulBij(main.producten[9], 20);
-		voordeelPad.vulBij(main.producten[9], 20);
-		voordeelPad.vulBij(main.producten[2], 20);
+		pad[0].vulBij(Main.getInstance().producten[0], 20);
+		pad[0].vulBij(Main.getInstance().producten[1], 20);
+		pad[1].vulBij(Main.getInstance().producten[2], 20);
+		pad[1].vulBij(Main.getInstance().producten[3], 20);
+		pad[2].vulBij(Main.getInstance().producten[4], 20);
+		pad[2].vulBij(Main.getInstance().producten[5], 20);
+		pad[3].vulBij(Main.getInstance().producten[6], 20);
+		pad[3].vulBij(Main.getInstance().producten[7], 20);
+		afdeling[0].vulBij(Main.getInstance().producten[8], 20);
+		afdeling[1].vulBij(Main.getInstance().producten[9], 20);
+		voordeelPad.vulBij(Main.getInstance().producten[9], 20);
+		voordeelPad.vulBij(Main.getInstance().producten[2], 20);
 		for (int i = 0; i < 10; i++)
 		{
-			magazijn.KomtAan(main.producten[i], 50);
+			magazijn.KomtAan(Main.getInstance().producten[i], 50);
 		}
 	}
 }

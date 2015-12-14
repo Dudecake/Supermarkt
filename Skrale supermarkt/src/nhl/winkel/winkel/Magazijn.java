@@ -8,11 +8,11 @@ import nhl.winkel.simulatie.SimulatieItem;
 
 public class Magazijn extends SimulatieItem
 {
-
+	@SuppressWarnings("unused")
 	private Controller controller;
-
+	@SuppressWarnings("unused")
 	private Vrachtwagen[] vrachtwagen;
-
+	@SuppressWarnings("unused")
 	private InMagazijn[] inMagazijn;
 	
 	private List<Product> producten;
@@ -56,7 +56,6 @@ public class Magazijn extends SimulatieItem
 	
 	public void KomtAan(Product product, int aantal)
 	{
-
 		for (int i = 0; i < aantal; i++)
 		{
 			this.producten.add(product);

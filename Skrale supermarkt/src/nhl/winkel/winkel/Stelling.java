@@ -43,7 +43,6 @@ public class Stelling extends SimulatieItem
 
 	public void vulBij(Product product, int aantal)
 	{
-
 		for (int i = 0; i < aantal; i++)
 		{
 			producten.add(product);

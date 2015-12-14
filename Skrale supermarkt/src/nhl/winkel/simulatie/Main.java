@@ -2,7 +2,6 @@ package nhl.winkel.simulatie;
 
 import java.awt.Point;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,9 +16,7 @@ import nhl.winkel.personen.Klant;
 import nhl.winkel.personen.Oudere;
 import nhl.winkel.personen.Student;
 import nhl.winkel.simulatie.DataLink.Mutatie;
-import nhl.winkel.winkel.Pad;
 import nhl.winkel.winkel.Product;
-import nhl.winkel.winkel.Vrachtwagen;
 
 public class Main 
 {
@@ -32,6 +29,7 @@ public class Main
 	private int winkelGroote = 25;
 	private char[][] buffer;
 	private char[][] winkel;
+	@SuppressWarnings("unused")
 	private Window window = new Window();
 	private static Main instance;
 	public Product[] producten;
@@ -48,21 +46,28 @@ public class Main
 	
 	public static void main(String[] args) 
 	{
-		instance = new Main();
-		instance.winkel = new char[instance.winkelGroote][instance.winkelGroote];
-		instance.controller = new Controller();
-		instance.dataLink = new DataLink();
-		instance.klanten = new ArrayList<>();
-		for (int i = 0; i < instance.winkelGroote; i++)
+		Main p = new Main();
+		instance = p;
+		p.winkel = new char[p.winkelGroote][p.winkelGroote];
+		for (int i = 0; i < p.winkelGroote; i++)
 		{
-			for (int j = 0; j < instance.winkelGroote; j++)
+			for (int j = 0; j < p.winkelGroote; j++)
 			{
-				if ((i == 0 || i == instance.winkelGroote - 1) || (j == 0 || j == instance.winkelGroote - 1))
-					if (i < 11 || i > 14)instance.winkel[i][j] = '+';
+				if ((i == 0 || i == p.winkelGroote - 1) || (j == 0 || j == p.winkelGroote - 1))
+				{
+					if (i < 11 || i > 14)p.winkel[i][j] = '+';
+				}
+				else
+				{
+					p.winkel[i][j] = '.';
+				}
 			}
 		}
-		instance.buffer = instance.winkel;
-		instance.timer.scheduleAtFixedRate(new TimerTask()
+		p.controller = new Controller();
+		p.dataLink = new DataLink();
+		p.klanten = new ArrayList<>();
+		p.buffer = p.winkel;
+		p.timer.scheduleAtFixedRate(new TimerTask()
 		{
 			@Override
 			public void run()
@@ -70,8 +75,8 @@ public class Main
 				instance.update();
 			}
 		}, 5, 8);
-		instance.NieuweKlant();
-		instance.update();
+		p.NieuweKlant();
+		p.update();
 	}
 
 	public void ProductOp(Integer prodNr)

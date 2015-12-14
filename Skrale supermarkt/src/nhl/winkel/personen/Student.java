@@ -7,12 +7,10 @@ import nhl.winkel.winkel.Product;
 
 public class Student extends Klant
 {
-
 	public Student(Controller c, Map<Product, Integer> prods) 
 	{
 		super(c);
 		id = '#';
 		boodschappenLijstje = prods;
 	}
-
 }

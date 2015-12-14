@@ -3,11 +3,10 @@ package nhl.winkel.winkel;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public class InAfdeling
 {
-
 	private Afdeling afdeling;
-	
 	Map<Integer, Float> inhoud;
 	
 	public InAfdeling() 
@@ -38,5 +37,4 @@ public class InAfdeling
 		float resterend = aantalHuidig-Float.intBitsToFloat(aantal);
 		inhoud.put(prodNr, resterend);
 	}
-
 }

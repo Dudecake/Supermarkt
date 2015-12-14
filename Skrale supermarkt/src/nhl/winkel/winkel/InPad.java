@@ -2,11 +2,10 @@ package nhl.winkel.winkel;
 
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public class InPad
 {
-
 	private Pad pad;
-	
 	Map<Integer, Integer> inhoud;
 	
 	public InPad()
