@@ -27,7 +27,9 @@ public class Afdeling extends SimulatieItem
 		id = 'A';
 		location = loc;
 		producten = new ArrayList<>();
+		Main.getInstance().getWinkel()[loc.x - 1][loc.y] = id;
 		Main.getInstance().getWinkel()[loc.x][loc.y] = id;
+		Main.getInstance().getWinkel()[loc.x + 1][loc.y] = id;
 		inAfdeling = new InAfdeling();
 	}
 

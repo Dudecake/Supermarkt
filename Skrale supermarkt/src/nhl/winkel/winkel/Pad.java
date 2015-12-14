@@ -23,7 +23,9 @@ public class Pad extends SimulatieItem
 	{
 		id = 'P';
 		location = loc;
+		Main.getInstance().getWinkel()[loc.x - 1][loc.y] = id;
 		Main.getInstance().getWinkel()[loc.x][loc.y] = id;
+		Main.getInstance().getWinkel()[loc.x + 1][loc.y] = id;
 		inPad = new InPad();
 	}
 

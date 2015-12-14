@@ -1,6 +1,7 @@
 package nhl.winkel.simulatie;
 
 import java.awt.Dimension;
+import java.nio.Buffer;
 import java.nio.charset.spi.CharsetProvider;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class Main
 	private Controller controller;
 	private DataLink dataLink;
 	private int winkelGroote = 25;
+	private char[][] buffer;
 	private char[][] winkel;
 	private Window window = new Window();
 	private static Main instance;
@@ -45,6 +47,7 @@ public class Main
 					instance.winkel[i][j] = '+';
 			}
 		}
+		instance.buffer = instance.winkel;
 	}
 
 	public void ProductOp(Integer prodNr) 

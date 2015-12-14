@@ -22,7 +22,9 @@ public class VoordeelPad extends SimulatieItem
 		id = 'V';
 		location = loc;
 		producten = new ArrayList<>();
+		Main.getInstance().getWinkel()[loc.x - 1][loc.y] = id;
 		Main.getInstance().getWinkel()[loc.x][loc.y] = id;
+		Main.getInstance().getWinkel()[loc.x + 1][loc.y] = id;
 		inVoordeelPad = new InVoordeelPad();
 	}
 
