@@ -1,5 +1,6 @@
 package nhl.winkel.winkel;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 import nhl.winkel.personen.Medewerker;
@@ -14,10 +15,16 @@ public class Kassa extends SimulatieItem
 
 	private Medewerker medewerker;
 	
-	public Kassa()
+	public Kassa(Point loc)
 	{
 		id = 'K';
-		// TODO Auto-generated constructor stub
+		location = loc;
+	}
+	
+	public Kassa(int x, int y)
+	{
+		id = 'K';
+		location = new Point(x, y);
 	}
 
 	public void inhoudWinkelwagen(ArrayList<Product> producten)

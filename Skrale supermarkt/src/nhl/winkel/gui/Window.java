@@ -1,8 +1,12 @@
 package nhl.winkel.gui;
 
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
@@ -23,6 +27,19 @@ public class Window extends JFrame
 			}
 		}, 10, 8);
 		surface = new Surface();
+		JButton button = new JButton("lepra");
+		button.addActionListener(new ActionListener()
+		{
+			int i = 0;
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				i++;
+				button.setText(String.valueOf(i+1));
+			}
+		});
+		//this.setLayout(new FlowLayout());
+		this.add(button);
 		this.add(surface);
 		this.setTitle("Blokken");
 	    this.setSize(1280, 720);

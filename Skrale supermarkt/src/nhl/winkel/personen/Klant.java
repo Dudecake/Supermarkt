@@ -1,5 +1,6 @@
 package nhl.winkel.personen;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ public class Klant extends Persoon
 
 	private Winkelwagen winkelwagen;
 	private Controller controller;
+	protected List<Product> lijstje;
 	
 	Map<Integer, Integer> boodschappenLijstje;
 	
@@ -20,7 +22,12 @@ public class Klant extends Persoon
 	{
 		controller = c;
 		winkelwagen = new Winkelwagen();
-		boodschappenLijstje = new HashMap<Integer,Integer>();
+		lijstje = new ArrayList<>();
+	}
+	
+	public void update()
+	{
+		
 	}
 
 	public void WilProductPakken(int prodNr, int aantal)
