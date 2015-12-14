@@ -5,7 +5,6 @@ import java.util.List;
 
 import nhl.winkel.winkel.Product;
 
-@SuppressWarnings("all")
 public class DataLink 
 {
 

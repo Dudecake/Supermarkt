@@ -10,7 +10,6 @@ import nhl.winkel.simulatie.Main;
 
 public class Surface extends JPanel
 {
-	
 	/**
 	 * 
 	 */

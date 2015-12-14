@@ -3,7 +3,6 @@ package nhl.winkel.winkel;
 import java.util.HashMap;
 import java.util.Map;
 
-@SuppressWarnings("all")
 public class InAfdeling
 {
 

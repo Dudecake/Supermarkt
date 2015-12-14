@@ -1,7 +1,5 @@
 package nhl.winkel.winkel;
 
-
-@SuppressWarnings("all")
 public class Product
 {
 

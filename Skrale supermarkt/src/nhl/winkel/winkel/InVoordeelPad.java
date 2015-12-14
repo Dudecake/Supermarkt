@@ -2,7 +2,6 @@ package nhl.winkel.winkel;
 
 import java.util.Map;
 
-@SuppressWarnings("all")
 public class InVoordeelPad
 {
 

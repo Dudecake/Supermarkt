@@ -10,7 +10,6 @@ import nhl.winkel.simulatie.DataLink.Mutatie;
 import nhl.winkel.winkel.Product;
 import nhl.winkel.winkel.Vrachtwagen;
 
-@SuppressWarnings("all")
 public class Main 
 {
 	private Klant[] klant;

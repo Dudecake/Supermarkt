@@ -9,9 +9,12 @@ import java.util.TimerTask;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-@SuppressWarnings("serial")
 public class Window extends JFrame
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4401258277282345771L;
 	private Timer timer;
 	private Surface surface;
 	

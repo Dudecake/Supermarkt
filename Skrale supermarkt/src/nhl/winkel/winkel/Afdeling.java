@@ -7,7 +7,6 @@ import nhl.winkel.personen.Medewerker;
 import nhl.winkel.simulatie.Controller;
 import nhl.winkel.simulatie.SimulatieItem;
 
-@SuppressWarnings("all")
 public class Afdeling extends SimulatieItem
 {
 

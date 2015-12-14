@@ -6,7 +6,6 @@ import java.util.List;
 import nhl.winkel.simulatie.Controller;
 import nhl.winkel.simulatie.SimulatieItem;
 
-@SuppressWarnings("all")
 public class Magazijn extends SimulatieItem
 {
 

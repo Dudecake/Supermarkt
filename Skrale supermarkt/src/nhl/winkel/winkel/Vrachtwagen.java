@@ -5,7 +5,6 @@ import java.util.List;
 import nhl.winkel.simulatie.Main;
 import nhl.winkel.simulatie.SimulatieItem;
 
-@SuppressWarnings("all")
 public class Vrachtwagen extends SimulatieItem
 {
 

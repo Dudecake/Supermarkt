@@ -9,7 +9,6 @@ import nhl.winkel.winkel.Pad;
 import nhl.winkel.winkel.Product;
 import nhl.winkel.winkel.VoordeelPad;
 
-@SuppressWarnings("all")
 public class Medewerker extends Persoon
 {
 
