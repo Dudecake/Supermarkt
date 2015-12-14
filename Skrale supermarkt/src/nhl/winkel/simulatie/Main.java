@@ -3,7 +3,9 @@ package nhl.winkel.simulatie;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -32,6 +34,7 @@ public class Main
 	private char[][] winkel;
 	private Window window = new Window();
 	private static Main instance;
+	public Product[] producten;
 	
 	public static Main getInstance()
 	{
@@ -110,19 +113,37 @@ public class Main
 	private void NieuweKlant()
 	{
 		Klant temp = null;
+		Map<Product, Integer> lijst = new HashMap<Product, Integer>();
 		switch (random.nextInt(4))
 		{
 		case 0:
-			temp = new EeuwigThuisWoner(controller, Arrays.asList(new Product[] {}));
+			lijst.put(producten[5], 2);
+			lijst.put(producten[6], 4);
+			lijst.put(producten[7], 3);
+			temp = new EeuwigThuisWoner(controller, lijst);
 			break;
 		case 1:
-			temp = new HuisPersoon(controller, Arrays.asList(new Product[] {}));
+			lijst.put(producten[2], 3);
+			lijst.put(producten[0], 2);
+			lijst.put(producten[3], 2);
+			lijst.put(producten[9], 2);
+			lijst.put(producten[4], 1);
+			lijst.put(producten[1], 2);
+			lijst.put(producten[8], 1);
+			temp = new HuisPersoon(controller, lijst);
 			break;
 		case 2:
-			temp = new Oudere(controller, Arrays.asList(new Product[] {}));
+			lijst.put(producten[0], 2);
+			lijst.put(producten[5], 1);
+			lijst.put(producten[4], 1);
+			lijst.put(producten[8], 1);
+			temp = new Oudere(controller, lijst);
 			break;
 		case 3:
-			temp = new Student(controller, Arrays.asList(new Product[] {}));
+			lijst.put(producten[6], 6);
+			lijst.put(producten[7], 3);
+			lijst.put(producten[9], 2);
+			temp = new Student(controller, lijst);
 		}
 		klanten.add(temp);
 	}

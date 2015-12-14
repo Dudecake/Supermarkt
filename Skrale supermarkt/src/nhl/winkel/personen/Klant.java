@@ -1,7 +1,6 @@
 package nhl.winkel.personen;
 
 import java.awt.Point;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,22 +14,20 @@ public class Klant extends Persoon
 
 	private Winkelwagen winkelwagen;
 	private Controller controller;
-	protected List<Product> lijstje;
 	
-	Map<Integer, Integer> boodschappenLijstje;
+	Map<Product, Integer> boodschappenLijstje;
 	
 	public Klant(Controller c)
 	{
 		controller = c;
 		location = new Point(13, 0);
 		winkelwagen = new Winkelwagen();
-		lijstje = new ArrayList<>();
 	}
 	
 	public void update()
 	{
 		Main.getInstance().getWinkel()[location.x][location.y] = id;
-		if (lijstje.size() == 0) setLocation(new Point(25, 13));
+		if (boodschappenLijstje.size() == 0) setLocation(new Point(25, 13));
 	}
 
 	public void WilProductPakken(int prodNr, int aantal)

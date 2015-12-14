@@ -14,7 +14,6 @@ import nhl.winkel.winkel.VoordeelPad;
 
 public class Controller 
 {
-	private Product[] producten;
 
 	private Afdeling[] afdeling;
 
@@ -86,28 +85,28 @@ public class Controller
 
 	private void initProducten()
 	{
-		producten = new Product[] {
+		main.producten = new Product[] {
 					new Product("kaas",101), new Product("melk",102), 
 					new Product("chocoladepasta",111), new Product("sperziebonen",112), 
 					new Product("pasta",121), new Product("appeltaart",122), 
 					new Product("chips",131), new Product("nootjes",132), 
 					new Product("Ham",201), 
 					new Product("bolletjes",202)};
-		pad[0].vulBij(producten[0], 20);
-		pad[0].vulBij(producten[1], 20);
-		pad[1].vulBij(producten[2], 20);
-		pad[1].vulBij(producten[3], 20);
-		pad[2].vulBij(producten[4], 20);
-		pad[2].vulBij(producten[5], 20);
-		pad[3].vulBij(producten[6], 20);
-		pad[3].vulBij(producten[7], 20);
-		afdeling[0].vulBij(producten[8], 20);
-		afdeling[1].vulBij(producten[9], 20);
-		voordeelPad.vulBij(producten[9], 20);
-		voordeelPad.vulBij(producten[2], 20);
+		pad[0].vulBij(main.producten[0], 20);
+		pad[0].vulBij(main.producten[1], 20);
+		pad[1].vulBij(main.producten[2], 20);
+		pad[1].vulBij(main.producten[3], 20);
+		pad[2].vulBij(main.producten[4], 20);
+		pad[2].vulBij(main.producten[5], 20);
+		pad[3].vulBij(main.producten[6], 20);
+		pad[3].vulBij(main.producten[7], 20);
+		afdeling[0].vulBij(main.producten[8], 20);
+		afdeling[1].vulBij(main.producten[9], 20);
+		voordeelPad.vulBij(main.producten[9], 20);
+		voordeelPad.vulBij(main.producten[2], 20);
 		for (int i = 0; i < 10; i++)
 		{
-			magazijn.KomtAan(producten[i], 50);
+			magazijn.KomtAan(main.producten[i], 50);
 		}
 	}
 }
