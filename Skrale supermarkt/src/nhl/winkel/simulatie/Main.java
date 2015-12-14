@@ -55,6 +55,8 @@ public class Main
 			}
 		}
 		instance.buffer = instance.winkel;
+		instance.NieuweKlant();
+		instance.update();
 	}
 
 	public void ProductOp(Integer prodNr) 
@@ -79,13 +81,17 @@ public class Main
 	
 	private void update()
 	{
+		winkel = buffer;
+		Klant temp;
 		for (int i = 0; i < klanten.size(); i++)
 		{
-			if (klanten.get(i).getLocation().equals(new Point(25, 13)))
+			temp = klanten.get(i);
+			if (temp.getLocation().equals(new Point(25, 13)))
 			{
 				klanten.remove(i);
 				i--;
 			}
+			temp.update();
 		}
 	}
 
