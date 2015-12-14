@@ -21,6 +21,7 @@ public class Vrachtwagen extends SimulatieItem
 		// TODO Auto-generated constructor stub
 	}
 
+	@SuppressWarnings("rawtypes")
 	public void Inladen(List prodNr)
 	{
 

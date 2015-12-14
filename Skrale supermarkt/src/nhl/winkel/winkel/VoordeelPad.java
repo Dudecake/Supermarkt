@@ -1,9 +1,11 @@
 package nhl.winkel.winkel;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
 import nhl.winkel.simulatie.Controller;
+import nhl.winkel.simulatie.Main;
 import nhl.winkel.simulatie.SimulatieItem;
 
 public class VoordeelPad extends SimulatieItem
@@ -15,10 +17,12 @@ public class VoordeelPad extends SimulatieItem
 	
 	private List<Product> producten;
 	
-	public VoordeelPad()
+	public VoordeelPad(Point loc)
 	{
 		id = 'V';
+		location = loc;
 		producten = new ArrayList<>();
+		Main.getInstance().getWinkel()[loc.x][loc.y] = id;
 		inVoordeelPad = new InVoordeelPad();
 	}
 

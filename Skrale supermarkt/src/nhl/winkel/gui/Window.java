@@ -44,7 +44,7 @@ public class Window extends JFrame
 		//this.setLayout(new FlowLayout());
 		this.add(button);
 		this.add(surface);
-		this.setTitle("Blokken");
+		this.setTitle("Winkel");
 	    this.setSize(1280, 720);
 	    this.setResizable(false);
 	    this.setLocationRelativeTo(null);

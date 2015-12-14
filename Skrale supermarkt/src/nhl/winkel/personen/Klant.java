@@ -32,7 +32,7 @@ public class Klant extends Persoon
 
 	public void WilProductPakken(int prodNr, int aantal)
 	{
-		List<Product> prods = controller.PaktProduct(prodNr, aantal);
+		List<Product> prods = controller.PaktProduct(prodNr, aantal, null);
 		if(prods.size() != 0)
 		{
 			winkelwagen.pleurInWinkelwagen(prods);

@@ -1,5 +1,6 @@
 package nhl.winkel.simulatie;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -14,11 +15,11 @@ import nhl.winkel.winkel.VoordeelPad;
 public class Controller 
 {
 
-	private Afdeling afdeling;
+	private Afdeling[] afdeling;
 
-	private Pad pad;
+	private Pad[] pad;
 
-	private Kassa kassa;
+	private Kassa[] kassa;
 
 	private VoordeelPad voordeelPad;
 
@@ -28,7 +29,9 @@ public class Controller
 	
 	public Controller() 
 	{
-		
+		pad = new Pad[] { new Pad(new Point(1, 5)), new Pad(new Point(1, 10)), new Pad(new Point(1, 15)), new Pad(new Point(1, 20))};
+		kassa = new Kassa[] { new Kassa(new Point(4, 22)), new Kassa(new Point(8, 22)), new Kassa(new Point(12, 22)), new Kassa(new Point(16, 22)), new Kassa(new Point(20, 22))};
+		afdeling = new Afdeling[] { new Afdeling(new Point(23, 5)), new Afdeling(new Point(23, 10))};
 	}
 
 	public void tisOp(int prodNr)
@@ -51,7 +54,7 @@ public class Controller
 		main.afgerekend(prods);
 	}
 
-	public List<Product> PaktProduct(int prodNr, int aantal)
+	public List<Product> PaktProduct(int prodNr, int aantal, Afdeling afdeling)
 	{
 		boolean uitkomst = false;
 		List<Product> res = new ArrayList<>();

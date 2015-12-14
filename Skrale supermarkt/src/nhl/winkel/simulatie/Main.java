@@ -34,9 +34,9 @@ public class Main
 	public static void main(String[] args) 
 	{
 		instance = new Main();
+		instance.winkel = new char[instance.winkelGroote][instance.winkelGroote];
 		instance.controller = new Controller();
 		instance.dataLink = new DataLink();
-		instance.winkel = new char[instance.winkelGroote][instance.winkelGroote];
 		for (int i = 0; i < instance.winkelGroote; i++)
 		{
 			for (int j = 0; j < instance.winkelGroote; j++)

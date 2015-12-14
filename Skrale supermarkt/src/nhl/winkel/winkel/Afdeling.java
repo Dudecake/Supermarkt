@@ -1,10 +1,12 @@
 package nhl.winkel.winkel;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
 import nhl.winkel.personen.Medewerker;
 import nhl.winkel.simulatie.Controller;
+import nhl.winkel.simulatie.Main;
 import nhl.winkel.simulatie.SimulatieItem;
 
 public class Afdeling extends SimulatieItem
@@ -20,10 +22,12 @@ public class Afdeling extends SimulatieItem
 	
 	private List<Product> producten;
 	
-	public Afdeling()
+	public Afdeling(Point loc)
 	{
 		id = 'A';
+		location = loc;
 		producten = new ArrayList<>();
+		Main.getInstance().getWinkel()[loc.x][loc.y] = id;
 		inAfdeling = new InAfdeling();
 	}
 
