@@ -1,5 +1,6 @@
 package nhl.winkel.personen;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,13 +22,14 @@ public class Klant extends Persoon
 	public Klant(Controller c)
 	{
 		controller = c;
+		location = new Point(13, 10);
 		winkelwagen = new Winkelwagen();
 		lijstje = new ArrayList<>();
 	}
 	
 	public void update()
 	{
-		
+		if (lijstje.size() == 0) setLocation(new Point(25, 13));
 	}
 
 	public void WilProductPakken(int prodNr, int aantal)

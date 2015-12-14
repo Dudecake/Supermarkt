@@ -1,19 +1,25 @@
 package nhl.winkel.simulatie;
 
-import java.awt.Dimension;
-import java.nio.Buffer;
-import java.nio.charset.spi.CharsetProvider;
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import nhl.winkel.gui.Window;
+import nhl.winkel.personen.EeuwigThuisWoner;
+import nhl.winkel.personen.HuisPersoon;
 import nhl.winkel.personen.Klant;
+import nhl.winkel.personen.Oudere;
+import nhl.winkel.personen.Student;
 import nhl.winkel.simulatie.DataLink.Mutatie;
 import nhl.winkel.winkel.Product;
 import nhl.winkel.winkel.Vrachtwagen;
 
 public class Main 
 {
-	private Klant[] klant;
+	private Random random = new Random();
+	private List<Klant> klanten;
 	private Vrachtwagen[] vrachtwagen;
 	private Controller controller;
 	private DataLink dataLink;
@@ -39,12 +45,13 @@ public class Main
 		instance.winkel = new char[instance.winkelGroote][instance.winkelGroote];
 		instance.controller = new Controller();
 		instance.dataLink = new DataLink();
+		instance.klanten = new ArrayList<>();
 		for (int i = 0; i < instance.winkelGroote; i++)
 		{
 			for (int j = 0; j < instance.winkelGroote; j++)
 			{
 				if ((i == 0 || i == instance.winkelGroote - 1) || (j == 0 || j == instance.winkelGroote - 1))
-					instance.winkel[i][j] = '+';
+					if (i < 11 || i > 14)instance.winkel[i][j] = '+';
 			}
 		}
 		instance.buffer = instance.winkel;
@@ -69,9 +76,36 @@ public class Main
 	{
 		return winkel;
 	}
+	
+	private void update()
+	{
+		for (int i = 0; i < klanten.size(); i++)
+		{
+			if (klanten.get(i).getLocation().equals(new Point(25, 13)))
+			{
+				klanten.remove(i);
+				i--;
+			}
+		}
+	}
 
 	private void NieuweKlant()
 	{
-		
+		Klant temp = null;
+		switch (random.nextInt(4))
+		{
+		case 0:
+			temp = new EeuwigThuisWoner(controller, Arrays.asList(new Product[] {}));
+			break;
+		case 1:
+			temp = new HuisPersoon(controller, Arrays.asList(new Product[] {}));
+			break;
+		case 2:
+			temp = new Oudere(controller, Arrays.asList(new Product[] {}));
+			break;
+		case 3:
+			temp = new Student(controller, Arrays.asList(new Product[] {}));
+		}
+		klanten.add(temp);
 	}
 }

@@ -19,7 +19,7 @@ public class Controller
 
 	private Pad[] pad;
 
-	private Kassa[] kassa;
+	private Kassa[] kassas;
 
 	private VoordeelPad voordeelPad;
 
@@ -30,9 +30,10 @@ public class Controller
 	public Controller() 
 	{
 		pad = new Pad[] { new Pad(new Point(2, 5)), new Pad(new Point(2, 10)), new Pad(new Point(2, 15)), new Pad(new Point(2, 20))};
-		kassa = new Kassa[] { new Kassa(new Point(4, 22)), new Kassa(new Point(8, 22)), new Kassa(new Point(12, 22)), new Kassa(new Point(16, 22)), new Kassa(new Point(20, 22))};
-		afdeling = new Afdeling[] { new Afdeling(new Point(22, 5)), new Afdeling(new Point(22, 10))};
-		voordeelPad = new VoordeelPad(new Point(10, 10));
+		kassas = new Kassa[] { new Kassa(new Point(4, 22)), new Kassa(new Point(8, 22)), new Kassa(new Point(12, 22)), new Kassa(new Point(16, 22)), new Kassa(new Point(20, 22))};
+		afdeling = new Afdeling[] { new Afdeling(new Point(10, 5)), new Afdeling(new Point(10, 10))};
+		voordeelPad = new VoordeelPad(new Point(10, 15));
+		magazijn = new Magazijn();
 	}
 
 	public void tisOp(int prodNr)
