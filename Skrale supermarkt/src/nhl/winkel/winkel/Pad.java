@@ -1,21 +1,14 @@
 package nhl.winkel.winkel;
 
 import java.awt.Point;
-import java.util.ArrayList;
 import java.util.List;
 
-import nhl.winkel.simulatie.Controller;
 import nhl.winkel.simulatie.Main;
-import nhl.winkel.simulatie.SimulatieItem;
 
-public class Pad extends SimulatieItem
+public class Pad extends Stelling
 {
 
-	private Controller controller;
-
 	private InPad inPad;
-	
-	private List<Product> producten;
 	
 	public Pad(Point loc)
 	{
@@ -29,41 +22,16 @@ public class Pad extends SimulatieItem
 
 	public List<Product> requestProduct(int prodNr, int aantal)
 	{
-		int count = 0;
-		List<Product> res = new ArrayList<>();
-		for (int i = 0; i < producten.size(); i++)
-		{
-			if (producten.get(i).checkProduct(prodNr))
-			{
-				res.add(producten.get(i));
-				producten.remove(i);
-				count++; i--;
-			}
-			if (count == prodNr) break;
-		}
-		return res;
-		/*if (inPad.CheckProduct(prodNr, aantal))
-		{
-			inPad.productGepakt(prodNr, aantal);
-			return true;
-		} else
-		{
-			return false;
-		}*/
+		return super.requestProduct(prodNr, aantal);
 	}
-	
+
 	public void vulBij(Product product, int aantal)
 	{
-
-		for (int i = 0; i < aantal; i++)
-		{
-			this.producten.add(product);
-		}
+		super.vulBij(product, aantal);
 	}
 
 	public void tisOp(int prodNr) 
 	{
-
+		super.tisOp(prodNr);
 	}
-
 }
