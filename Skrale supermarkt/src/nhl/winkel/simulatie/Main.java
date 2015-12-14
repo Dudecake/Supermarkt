@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import nhl.winkel.gui.Window;
 import nhl.winkel.personen.EeuwigThuisWoner;
@@ -18,6 +20,7 @@ import nhl.winkel.winkel.Vrachtwagen;
 
 public class Main 
 {
+	private Timer timer = new Timer();
 	private Random random = new Random();
 	private List<Klant> klanten;
 	private Vrachtwagen[] vrachtwagen;
@@ -55,11 +58,19 @@ public class Main
 			}
 		}
 		instance.buffer = instance.winkel;
+		instance.timer.scheduleAtFixedRate(new TimerTask()
+		{
+			@Override
+			public void run()
+			{
+				instance.update();
+			}
+		}, 5, 8);
 		instance.NieuweKlant();
 		instance.update();
 	}
 
-	public void ProductOp(Integer prodNr) 
+	public void ProductOp(Integer prodNr)
 	{
 
 	}
