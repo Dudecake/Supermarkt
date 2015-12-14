@@ -29,7 +29,7 @@ public class Vrachtwagen extends SimulatieItem
 	
 	public void laadUit()
 	{
-		magazijn.KomtAan(producten);
+		//magazijn.KomtAan(producten);
 		producten.clear();
 	}
 

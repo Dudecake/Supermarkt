@@ -4,9 +4,7 @@ import java.util.Map;
 
 public class InVoordeelPad
 {
-
-	private VoordeelPad voordeelPad;
-
+	
 	Map<Integer, Integer> inhoud;
 	
 	public InVoordeelPad()
@@ -16,7 +14,9 @@ public class InVoordeelPad
 
 	public void vultBij(int prodNr, int aantal)
 	{
-
+		int aantalHuidig = inhoud.get(prodNr);
+		int nieuw = aantalHuidig+aantal;
+		inhoud.put(prodNr, nieuw);
 	}
 	
 	public Boolean CheckProduct(int prodNr, int aantal)

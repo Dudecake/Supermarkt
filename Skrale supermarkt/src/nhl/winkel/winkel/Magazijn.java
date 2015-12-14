@@ -54,15 +54,13 @@ public class Magazijn extends SimulatieItem
 		return res;
 	}
 	
-	public void KomtAan(List<Product> producten)
-	{
-		this.producten.addAll(producten);
-		controller.ProductAfgeleverd(producten);
-	}
-
-	public void KomtAan(int prodNr, int aantal)
+	public void KomtAan(Product product, int aantal)
 	{
 
+		for (int i = 0; i < aantal; i++)
+		{
+			this.producten.add(product);
+		}
 	}
 
 }

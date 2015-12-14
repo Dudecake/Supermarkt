@@ -12,8 +12,6 @@ import nhl.winkel.simulatie.SimulatieItem;
 public class Afdeling extends SimulatieItem
 {
 
-	private String naamAfdeling;
-
 	private Controller controller;
 
 	private Medewerker medewerker;
@@ -58,9 +56,13 @@ public class Afdeling extends SimulatieItem
 		}*/
 	}
 
-	public void vulBij(List<Product> producten)
+	public void vulBij(Product product, int aantal)
 	{
-		this.producten.addAll(producten);
+
+		for (int i = 0; i < aantal; i++)
+		{
+			this.producten.add(product);
+		}
 	}
 
 	public void tisOp(int prodNr) 

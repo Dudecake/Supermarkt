@@ -15,6 +15,7 @@ import nhl.winkel.personen.Klant;
 import nhl.winkel.personen.Oudere;
 import nhl.winkel.personen.Student;
 import nhl.winkel.simulatie.DataLink.Mutatie;
+import nhl.winkel.winkel.Pad;
 import nhl.winkel.winkel.Product;
 import nhl.winkel.winkel.Vrachtwagen;
 
@@ -23,7 +24,7 @@ public class Main
 	private Timer timer = new Timer();
 	private Random random = new Random();
 	private List<Klant> klanten;
-	private Vrachtwagen[] vrachtwagen;
+	//private Vrachtwagen[] vrachtwagen;
 	private Controller controller;
 	private DataLink dataLink;
 	private int winkelGroote = 25;

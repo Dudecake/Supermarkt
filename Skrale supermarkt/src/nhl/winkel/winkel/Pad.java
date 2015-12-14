@@ -11,8 +11,6 @@ import nhl.winkel.simulatie.SimulatieItem;
 public class Pad extends SimulatieItem
 {
 
-	private String naam;
-
 	private Controller controller;
 
 	private InPad inPad;
@@ -54,14 +52,13 @@ public class Pad extends SimulatieItem
 		}*/
 	}
 	
-	public void vulBij(List<Product> producten)
+	public void vulBij(Product product, int aantal)
 	{
-		this.producten.addAll(producten);
-	}
 
-	public void vulBij(int prodNr, int aantal)
-	{
-		
+		for (int i = 0; i < aantal; i++)
+		{
+			this.producten.add(product);
+		}
 	}
 
 	public void tisOp(int prodNr) 

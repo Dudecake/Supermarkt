@@ -7,9 +7,6 @@ import nhl.winkel.winkel.Product;
 
 public class DataLink 
 {
-
-	private Main main;
-	
 	public DataLink() 
 	{
 		// TODO Auto-generated constructor stub

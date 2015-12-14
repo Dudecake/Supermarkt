@@ -2,20 +2,13 @@ package nhl.winkel.winkel;
 
 public class Product
 {
-
+	private String prodNaam;
 	private Integer prodNummer;
-
-	private InMagazijn inMagazijn;
-
-	private InVoordeelPad inVoordeelPad;
-
-	private InPad inPad;
-
-	private InAfdeling inAfdeling;
 	
-	public Product()
+	public Product(String naam, int id)
 	{
-		// TODO Auto-generated constructor stub
+		prodNaam = naam;
+		prodNummer = id;
 	}
 	
 	public boolean checkProduct(Integer prodNr)

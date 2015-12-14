@@ -29,15 +29,15 @@ public class Medewerker extends Persoon
 		List<Product> prods = magazijn.haalProducten(prodNr, aantal);
 		if (locatie instanceof Pad)
 		{
-			((Pad) locatie).vulBij(prods);
+			((Pad) locatie).vulBij(prods.get(0),prods.size());
 		}
 		if (locatie instanceof VoordeelPad)
 		{
-			((VoordeelPad) locatie).vulBij(prods);
+			((VoordeelPad) locatie).vulBij(prods.get(0),prods.size());
 		}
 		if (locatie instanceof Afdeling)
 		{
-			((Afdeling) locatie).vulBij(prods);
+			((Afdeling) locatie).vulBij(prods.get(0),prods.size());
 		}
 	}
 }

@@ -1,6 +1,5 @@
 package nhl.winkel.personen;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import nhl.winkel.simulatie.Controller;
