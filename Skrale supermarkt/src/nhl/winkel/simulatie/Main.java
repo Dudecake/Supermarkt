@@ -89,15 +89,7 @@ public class Main
 			{
 				instance.update();
 			}
-		}, 800, 800);
-		Runtime.getRuntime().addShutdownHook(new Thread()
-		{
-			@Override
-			public void run()
-			{
-				instance.timer.cancel();
-			}
-		});
+		}, 500, 1000);
 		p.NieuweKlant();
 		p.update();
 	}

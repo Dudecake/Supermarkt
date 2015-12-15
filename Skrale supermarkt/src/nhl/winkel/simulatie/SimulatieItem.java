@@ -36,6 +36,10 @@ public class SimulatieItem
 	
 	public void setLocation(Point loc)
 	{
+		if (loc.x == 25 || loc.y == 25)
+		{
+			throw new IllegalArgumentException("Location is invalid: x: " + String.valueOf(loc.x) + " y: " + String.valueOf(loc.y));
+		}
 		synchronized (this)
 		{
 			location = loc;

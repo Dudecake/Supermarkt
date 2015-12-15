@@ -16,6 +16,11 @@ public class Stelling extends SimulatieItem
 		producten = new ArrayList<>();
 	}
 	
+	public List<Product> getProducten()
+	{
+		return producten;
+	}
+	
 	public List<Product> requestProduct(int prodNr, int aantal)
 	{
 		int count = 0;
