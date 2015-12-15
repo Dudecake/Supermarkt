@@ -3,12 +3,11 @@ package nhl.winkel.winkel;
 import java.util.ArrayList;
 import java.util.List;
 
-import nhl.winkel.simulatie.Controller;
+import nhl.winkel.simulatie.Main;
 import nhl.winkel.simulatie.SimulatieItem;
 
 public class Stelling extends SimulatieItem
 {
-	protected Controller controller;
 	protected List<Product> producten;
 	
 	protected Stelling()
@@ -33,7 +32,11 @@ public class Stelling extends SimulatieItem
 				producten.remove(i);
 				count++; i--;
 			}
-			if (count == prodNr) break;
+			if (count == aantal) break;
+		}
+		if (!isGenoeg(prodNr))
+		{
+			tisOp(prodNr, this);
 		}
 		return res;
 		/*if (inVoordeelPad.CheckProduct(prodNr, aantal))
@@ -45,6 +48,20 @@ public class Stelling extends SimulatieItem
 			return false;
 		}*/
 	}
+	
+	private boolean isGenoeg(int prodNr)
+	{
+		int i = 0;
+		for (Product product : producten)
+		{
+			if (product.getProdNr() == prodNr)
+			{
+				i++;
+				if (i == 5) return true;
+			}
+		}
+		return false;
+	}
 
 	public void vulBij(Product product, int aantal)
 	{
@@ -54,8 +71,8 @@ public class Stelling extends SimulatieItem
 		}
 	}
 
-	public void tisOp(int prodNr)
+	public void tisOp(int prodNr, Stelling stel)
 	{
-		controller.tisOp(prodNr);
+		Main.getInstance().getController().tisOp(prodNr, stel);
 	}
 }

@@ -4,7 +4,6 @@ import java.awt.Point;
 import java.util.List;
 
 import nhl.winkel.personen.Medewerker;
-import nhl.winkel.simulatie.Controller;
 import nhl.winkel.simulatie.Main;
 import nhl.winkel.simulatie.SimulatieItem;
 
@@ -33,6 +32,7 @@ public class Kassa extends SimulatieItem
 		id = 'K';
 		location = loc;
 		medewerker = med;
+		medewerker.setLocation(location);
 		Main.getInstance().getWinkel()[loc.x][loc.y - 1] = id;
 		Main.getInstance().getWinkel()[loc.x][loc.y] = id;
 		Main.getInstance().addKassa(this);
@@ -43,6 +43,7 @@ public class Kassa extends SimulatieItem
 		id = 'K';
 		location = new Point(x, y);
 		medewerker = med;
+		medewerker.setLocation(location);
 		Main.getInstance().getWinkel()[x][y - 1] = id;
 		Main.getInstance().getWinkel()[x][y] = id;
 		Main.getInstance().addKassa(this);
@@ -51,6 +52,7 @@ public class Kassa extends SimulatieItem
 	public void setMedewerker(Medewerker med)
 	{
 		medewerker = med;
+		medewerker.setLocation(location);
 		Main.getInstance().addKassa(this);
 	}
 	

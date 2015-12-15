@@ -18,18 +18,19 @@ public class Controller
 {
 	private Afdeling[] afdeling;
 	private Pad[] pad;
-	@SuppressWarnings("unused")
 	private Kassa[] kassas;
 	private VoordeelPad voordeelPad;
+	private Medewerker[] medewerkers;
 	private Magazijn magazijn;
 	
 	public Controller() 
 	{
 		pad = new Pad[] { new Pad(new Point(2, 4)), new Pad(new Point(2, 8)), new Pad(new Point(2, 12)), new Pad(new Point(2, 16))};
-		kassas = new Kassa[] { new Kassa(new Point(3, 22), new Medewerker()), new Kassa(new Point(6, 22)), new Kassa(new Point(9, 22)), new Kassa(new Point(12, 22)), new Kassa(new Point(15, 22))};
+		kassas = new Kassa[] { new Kassa(new Point(3, 22)), new Kassa(new Point(6, 22)), new Kassa(new Point(9, 22)), new Kassa(new Point(12, 22)), new Kassa(new Point(15, 22))};
 		afdeling = new Afdeling[] { new Afdeling(new Point(9, 5)), new Afdeling(new Point(9, 10))};
 		voordeelPad = new VoordeelPad(new Point(9, 15));
 		magazijn = new Magazijn();
+		initMedewerkers(6);
 		initProducten();
 	}
 	
@@ -48,10 +49,20 @@ public class Controller
 		return voordeelPad;
 	}
 	
-
-	public void tisOp(int prodNr)
+	public Magazijn getMagazijn()
 	{
-		Main.getInstance().ProductOp(prodNr);
+		return magazijn;
+	}
+
+	public void tisOp(int prodNr, Stelling stel)
+	{
+		for (Medewerker medewerker : medewerkers)
+		{
+			if (!medewerker.isBezig())
+			{
+				medewerker.vulProductBij(prodNr, 20, stel);
+			}
+		}
 	}
 	
 	public void vulBij(int prodNr, int aantal, Object locatie)
@@ -94,6 +105,18 @@ public class Controller
 
 	}
 	
+	private void initMedewerkers(int maxAantal)
+	{
+		medewerkers = new Medewerker[maxAantal];
+		for (int i = 0; i < maxAantal; i++)
+		{
+			medewerkers[i] = new Medewerker();
+		}
+		afdeling[0].addMedewerker(medewerkers[0]);
+		afdeling[1].addMedewerker(medewerkers[1]);
+		kassas[0].setMedewerker(medewerkers[2]);
+	}
+	
 	private void initProducten()
 	{
 		Product[] producten = new Product[] {
@@ -103,7 +126,7 @@ public class Controller
 					new Product("chips",131), new Product("nootjes",132), 
 					new Product("Ham",201), 
 					new Product("bolletjes",202)};
-		int startAantal = Short.MAX_VALUE;
+		int startAantal = 25;
 		pad[0].vulBij(producten[0], startAantal);
 		pad[0].vulBij(producten[1], startAantal);
 		pad[1].vulBij(producten[2], startAantal);
@@ -122,6 +145,4 @@ public class Controller
 		}
 		Main.getInstance().setProducten(producten);
 	}
-	
-
 }
