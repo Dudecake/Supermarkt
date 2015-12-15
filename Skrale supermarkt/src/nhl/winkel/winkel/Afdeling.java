@@ -8,8 +8,6 @@ import nhl.winkel.simulatie.Main;
 public class Afdeling extends Stelling
 {
 	private Medewerker medewerker;
-	@SuppressWarnings("unused")
-	private InAfdeling inAfdeling;
 	
 	public Afdeling(Point loc)
 	{
@@ -18,6 +16,5 @@ public class Afdeling extends Stelling
 		Main.getInstance().getWinkel()[loc.x - 1][loc.y] = id;
 		Main.getInstance().getWinkel()[loc.x][loc.y] = id;
 		Main.getInstance().getWinkel()[loc.x + 1][loc.y] = id;
-		inAfdeling = new InAfdeling();
 	}
 }

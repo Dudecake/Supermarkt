@@ -12,8 +12,6 @@ public class Magazijn extends SimulatieItem
 	private Controller controller;
 	@SuppressWarnings("unused")
 	private Vrachtwagen[] vrachtwagen;
-	@SuppressWarnings("unused")
-	private InMagazijn[] inMagazijn;
 	
 	private List<Product> producten;
 	

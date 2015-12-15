@@ -98,7 +98,7 @@ public class Controller
 		voordeelPad.vulBij(Main.getInstance().producten[2], 20);
 		for (int i = 0; i < 10; i++)
 		{
-			magazijn.KomtAan(Main.getInstance().producten[i], 50);
+			magazijn.KomtAan(Main.getInstance().producten[i], 70);
 		}
 	}
 }

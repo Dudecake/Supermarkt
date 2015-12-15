@@ -6,8 +6,6 @@ import nhl.winkel.simulatie.Main;
 
 public class Pad extends Stelling
 {
-	@SuppressWarnings("unused")
-	private InPad inPad;
 	
 	public Pad(Point loc)
 	{
@@ -16,6 +14,5 @@ public class Pad extends Stelling
 		Main.getInstance().getWinkel()[loc.x - 1][loc.y] = id;
 		Main.getInstance().getWinkel()[loc.x][loc.y] = id;
 		Main.getInstance().getWinkel()[loc.x + 1][loc.y] = id;
-		inPad = new InPad();
 	}
 }

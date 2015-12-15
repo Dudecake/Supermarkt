@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import nhl.winkel.simulatie.Controller;
-import nhl.winkel.simulatie.Main;
 import nhl.winkel.winkel.Product;
 import nhl.winkel.winkel.Winkelwagen;
 
@@ -26,8 +25,13 @@ public class Klant extends Persoon
 	@Override
 	public void update()
 	{
-		//Stelling stelling = Main.
-		if (boodschappenLijstje.size() == 0) setLocation(new Point(25, 13));
+		if (boodschappenLijstje.size() == 0) 
+		{
+			setLocation(new Point(25, 13));
+		} else
+		{
+			boodschappenLijstje.get(null);
+		}
 		super.update();
 	}
 
