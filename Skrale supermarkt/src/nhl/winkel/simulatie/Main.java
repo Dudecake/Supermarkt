@@ -89,7 +89,15 @@ public class Main
 			{
 				instance.update();
 			}
-		}, 5, 800);
+		}, 800, 800);
+		Runtime.getRuntime().addShutdownHook(new Thread()
+		{
+			@Override
+			public void run()
+			{
+				instance.timer.cancel();
+			}
+		});
 		p.NieuweKlant();
 		p.update();
 	}
@@ -116,18 +124,19 @@ public class Main
 	
 	private void update()
 	{
-		winkel = buffer;
+		winkel = clone(buffer);
 		Klant temp;
 		for (int i = 0; i < klanten.size(); i++)
 		{
 			temp = klanten.get(i);
-			if (temp.getLocation().equals(new Point(25, 13)))
+			if (temp.getLocation().equals(new Point(13, 24)))
 			{
 				klanten.remove(i);
 				i--;
 			}
 			temp.update();
 		}
+		NieuweKlant();
 	}
 
 	private void NieuweKlant()
@@ -166,5 +175,18 @@ public class Main
 			temp = new Student(controller, lijst);
 		}
 		klanten.add(temp);
+	}
+	
+	private char[][] clone(char[][] x)
+	{
+		char[][] res = new char[x.length][x.length];
+		for (int i = 0; i < x.length; i++)
+		{
+			for (int j = 0; j < x.length; j++)
+			{
+				res[i][j] = x[i][j];
+			}
+		}
+		return res;
 	}
 }

@@ -114,7 +114,7 @@ public class Klant extends Persoon
 		}
 		else 
 		{
-			setLocation(new Point(25, 13));
+			setLocation(new Point(13, 24));
 			//Ren schreeuwend de winkel uit.
 		}
 	}

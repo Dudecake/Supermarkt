@@ -10,6 +10,7 @@ import nhl.winkel.winkel.Kassa;
 import nhl.winkel.winkel.Magazijn;
 import nhl.winkel.winkel.Pad;
 import nhl.winkel.winkel.Product;
+import nhl.winkel.winkel.Stelling;
 import nhl.winkel.winkel.VoordeelPad;
 
 public class Controller 
@@ -67,7 +68,7 @@ public class Controller
 		Main.getInstance().afgerekend(prods);
 	}
 
-	public List<Product> PaktProduct(int prodNr, int aantal, Object locatie)
+	public List<Product> PaktProduct(int prodNr, int aantal, Stelling locatie)
 	{
 		List<Product> res = new ArrayList<>();
 		char[] prod = Integer.toString(prodNr).toCharArray();

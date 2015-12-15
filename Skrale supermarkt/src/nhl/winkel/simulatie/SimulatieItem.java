@@ -1,6 +1,7 @@
 package nhl.winkel.simulatie;
 
 import java.awt.Point;
+import java.util.concurrent.locks.Lock;
 
 public class SimulatieItem
 {
@@ -19,16 +20,25 @@ public class SimulatieItem
 	
 	public Point getLocation()
 	{
-		return location;
+		synchronized (this)
+		{
+			return location;
+		}
 	}
 	
 	public void setLocation(int x, int y)
 	{
-		location = new Point(x, y);
+		synchronized (this)
+		{
+			location = new Point(x, y);
+		}
 	}
 	
 	public void setLocation(Point loc)
 	{
-		location = loc;
+		synchronized (this)
+		{
+			location = loc;
+		}
 	}
 }
