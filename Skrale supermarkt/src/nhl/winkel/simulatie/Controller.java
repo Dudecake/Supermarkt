@@ -126,6 +126,7 @@ public class Controller
 					new Product("chips",131), new Product("nootjes",132), 
 					new Product("Ham",201), 
 					new Product("bolletjes",202)};
+		
 		int startAantal = 25;
 		pad[0].vulBij(producten[0], startAantal);
 		pad[0].vulBij(producten[1], startAantal);
@@ -141,7 +142,7 @@ public class Controller
 		voordeelPad.vulBij(producten[2], startAantal);
 		for (int i = 0; i < 10; i++)
 		{
-			magazijn.KomtAan(producten[i], startAantal*2);
+			magazijn.KomtAan(producten[i], startAantal*3);
 		}
 		Main.getInstance().setProducten(producten);
 	}
