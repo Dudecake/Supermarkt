@@ -20,6 +20,13 @@ public class Medewerker extends Persoon
 		id = 'M';
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void update()
+	{
+		// insert code here
+		
+		super.update();
+	}
 
 	public void vulProductBij(int prodNr, int aantal, Object locatie)
 	{

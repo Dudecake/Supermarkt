@@ -55,7 +55,8 @@ public class Main
 			{
 				if ((i == 0 || i == p.winkelGroote - 1) || (j == 0 || j == p.winkelGroote - 1))
 				{
-					if (i < 11 || i > 14)p.winkel[i][j] = '+';
+					if (i < 11 || i > 14) p.winkel[i][j] = '+';
+					else p.winkel[i][j] = '.';
 				}
 				else
 				{

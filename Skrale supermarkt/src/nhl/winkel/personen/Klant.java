@@ -23,10 +23,12 @@ public class Klant extends Persoon
 		winkelwagen = new Winkelwagen();
 	}
 	
+	@Override
 	public void update()
 	{
-		Main.getInstance().getWinkel()[location.x][location.y] = id;
+		//Stelling stelling = Main.
 		if (boodschappenLijstje.size() == 0) setLocation(new Point(25, 13));
+		super.update();
 	}
 
 	public void WilProductPakken(int prodNr, int aantal)
@@ -38,6 +40,7 @@ public class Klant extends Persoon
 		}
 		else 
 		{
+			setLocation(new Point(25, 13));
 			//Ren schreeuwend de winkel uit.
 		}
 	}
