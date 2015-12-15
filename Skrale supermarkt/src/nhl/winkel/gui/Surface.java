@@ -44,39 +44,77 @@ public class Surface extends JPanel
 	private void drawStatistics(Graphics2D g2d)
 	{
 		Pad[] paden = Main.getInstance().getController().getPad();
-		int height = 15;
+		int height = 0;
 		int index = 0;
 		for (Pad pad : paden)
 		{
+			height += 15;
 			g2d.drawString("pad " + String.valueOf(index), 715, height);
 			height += 15; index++;
+			int prod1 = pad.getProducten().get(0).getProdNr();
+			int prod2 = 0, numProd1 = 0, numProd2 = 0;
+			String naamprod2 = "";
 			for (Product prod : pad.getProducten())
 			{
-				g2d.drawString(prod.getProdNaam(), 715, height);
-				height += 15;
+				if (prod.getProdNr()==prod1)
+				{
+					numProd1++;
+				} else if (prod2==0)
+				{
+					prod2 = prod.getProdNr();
+					naamprod2 = prod.getProdNaam();
+					numProd2++;
+				} else
+				{
+					numProd2++;
+				}
 			}
+			g2d.drawString(pad.getProducten().get(0).getProdNaam()+ ": " + String.valueOf(numProd1), 715, height);
+			height += 15;
+			g2d.drawString(naamprod2+ ": " + String.valueOf(numProd2), 715, height);
+			height += 15;
 		}
 		index = 0;
-		int padding = height - 15;
 		Afdeling[] afdelingen = Main.getInstance().getController().getAfdeling();
 		for (Afdeling afdeling : afdelingen)
 		{
-			g2d.drawString("afdeling " + String.valueOf(index), 815, height - padding);
+			height += 15;
+			g2d.drawString("afdeling " + String.valueOf(index), 715, height);
 			height += 15; index++;
-			for (Product prod : afdeling.getProducten())
+			int numProd1 = 0;
+			for (@SuppressWarnings("unused") Product prod : afdeling.getProducten())
 			{
-				g2d.drawString(prod.getProdNaam(), 815, height - padding);
-				height += 15;
+				numProd1++;
 			}
-		}
-		VoordeelPad voordeelPad = Main.getInstance().getController().getVoordeelPad();
-		g2d.drawString("voordeelpad", 815, height - padding);
-		height += 15;
-		for (Product prod : voordeelPad.getProducten())
-		{
-			g2d.drawString(prod.getProdNaam(), 815, height - padding);
+			g2d.drawString(afdeling.getProducten().get(0).getProdNaam()+ ": " + String.valueOf(numProd1), 715, height);
 			height += 15;
 		}
+		VoordeelPad voordeelPad = Main.getInstance().getController().getVoordeelPad();
+		height += 15;
+		g2d.drawString("voordeelpad", 715, height);
+		height += 15;
+		int prod1 = voordeelPad.getProducten().get(0).getProdNr();
+		int prod2 = 0, numProd1 = 0, numProd2 = 0;
+		String naamprod2 = "";
+		for (Product prod : voordeelPad.getProducten())
+		{
+			if (prod.getProdNr()==prod1)
+			{
+				numProd1++;
+			} else if (prod2==0)
+			{
+				prod2 = prod.getProdNr();
+				naamprod2 = prod.getProdNaam();
+				numProd2++;
+			} else
+			{
+				numProd2++;
+			}
+		}
+		g2d.drawString(voordeelPad.getProducten().get(0).getProdNaam()+ ": " + String.valueOf(numProd1), 715, height);
+		height += 15;
+		g2d.drawString(naamprod2+ ": " + String.valueOf(numProd2), 715, height);
+		height += 15;
 	}
 	
 	protected void paintComponent(Graphics g)
