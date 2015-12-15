@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import nhl.winkel.simulatie.Controller;
 import nhl.winkel.simulatie.Main;
 import nhl.winkel.winkel.Afdeling;
+import nhl.winkel.winkel.Kassa;
 import nhl.winkel.winkel.Pad;
 import nhl.winkel.winkel.Product;
 import nhl.winkel.winkel.Stelling;
@@ -16,6 +17,7 @@ public class Klant extends Persoon
 {
 	private Winkelwagen winkelwagen;
 	private Controller controller;
+	private boolean afgerekend;
 	
 	//lijstje met product en aantal
 	TreeMap<Integer, Integer> boodschappenLijstje;
@@ -24,16 +26,23 @@ public class Klant extends Persoon
 	{
 		controller = c;
 		location = new Point(13, 0);
+		afgerekend = false;
 		winkelwagen = new Winkelwagen();
 	}
 	
 	@Override
 	public void update()
 	{
-		if (boodschappenLijstje.size() == 0) 
+		if (afgerekend)
 		{
 			setLocation(new Point(13, 24));
-		} else
+			return;
+		}
+		if (boodschappenLijstje.size() == 0) 
+		{
+			rekenAf();
+		}
+		else
 		{
 			Stelling loca = null;
 			int num = boodschappenLijstje.firstEntry().getKey();
@@ -103,6 +112,18 @@ public class Klant extends Persoon
 			boodschappenLijstje.remove(num);
 		}
 		super.update();
+	}
+	
+	private void rekenAf()
+	{
+		if (Main.getInstance().kassaVrij())
+		{
+			Kassa kassa = Main.getInstance().getVrijeKassa();
+			Point loc = kassa.getLocation();
+			setLocation(new Point(loc.x+1, loc.y));
+			kassa.inhoudWinkelwagen(winkelwagen.getInhoud());
+			afgerekend = true;
+		}	
 	}
 
 	private void WilProductPakken(int prodNr, int aantal, Stelling locatie)

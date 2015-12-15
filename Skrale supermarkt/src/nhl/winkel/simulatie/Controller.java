@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import nhl.winkel.personen.Medewerker;
 import nhl.winkel.winkel.Afdeling;
 import nhl.winkel.winkel.Kassa;
 import nhl.winkel.winkel.Magazijn;
@@ -25,7 +26,7 @@ public class Controller
 	public Controller() 
 	{
 		pad = new Pad[] { new Pad(new Point(2, 4)), new Pad(new Point(2, 8)), new Pad(new Point(2, 12)), new Pad(new Point(2, 16))};
-		kassas = new Kassa[] { new Kassa(new Point(3, 22)), new Kassa(new Point(6, 22)), new Kassa(new Point(9, 22)), new Kassa(new Point(12, 22)), new Kassa(new Point(15, 22))};
+		kassas = new Kassa[] { new Kassa(new Point(3, 22), new Medewerker()), new Kassa(new Point(6, 22)), new Kassa(new Point(9, 22)), new Kassa(new Point(12, 22)), new Kassa(new Point(15, 22))};
 		afdeling = new Afdeling[] { new Afdeling(new Point(9, 5)), new Afdeling(new Point(9, 10))};
 		voordeelPad = new VoordeelPad(new Point(9, 15));
 		magazijn = new Magazijn();
@@ -102,7 +103,7 @@ public class Controller
 					new Product("chips",131), new Product("nootjes",132), 
 					new Product("Ham",201), 
 					new Product("bolletjes",202)};
-		int startAantal = 50;
+		int startAantal = Short.MAX_VALUE;
 		pad[0].vulBij(producten[0], startAantal);
 		pad[0].vulBij(producten[1], startAantal);
 		pad[1].vulBij(producten[2], startAantal);

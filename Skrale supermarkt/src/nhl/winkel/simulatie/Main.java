@@ -15,6 +15,7 @@ import nhl.winkel.personen.Klant;
 import nhl.winkel.personen.Oudere;
 import nhl.winkel.personen.Student;
 import nhl.winkel.simulatie.DataLink.Mutatie;
+import nhl.winkel.winkel.Kassa;
 import nhl.winkel.winkel.Product;
 
 public class Main 
@@ -22,6 +23,7 @@ public class Main
 	private Timer timer = new Timer();
 	private Random random = new Random();
 	private List<Klant> klanten;
+	private List<Kassa> kassas;
 	//private Vrachtwagen[] vrachtwagen;
 	private Controller controller;
 	private DataLink dataLink;
@@ -41,6 +43,29 @@ public class Main
 	public int getWinkelSize()
 	{
 		return winkelGroote;
+	}
+	
+	public boolean kassaVrij()
+	{
+		return !kassas.isEmpty();
+	}
+	
+	public void addKassa(Kassa kassa)
+	{
+		kassas.add(kassa);
+	}
+	
+	public void removeKassa(Kassa kassa)
+	{
+		kassas.remove(kassa);
+	}
+	
+	public Kassa getVrijeKassa()
+	{
+		int i = random.nextInt(kassas.size());
+		Kassa res = kassas.get(i);
+		kassas.remove(i);
+		return res;
 	}
 
 	public Product[] getProducten()
@@ -63,6 +88,7 @@ public class Main
 		Main p = new Main();
 		instance = p;
 		p.winkel = new char[p.winkelGroote][p.winkelGroote];
+		p.kassas = new ArrayList<>();
 		for (int i = 0; i < p.winkelGroote; i++)
 		{
 			for (int j = 0; j < p.winkelGroote; j++)
@@ -91,7 +117,6 @@ public class Main
 			}
 		}, 500, 1000);
 		p.NieuweKlant();
-		p.update();
 	}
 
 	public void ProductOp(Integer prodNr)

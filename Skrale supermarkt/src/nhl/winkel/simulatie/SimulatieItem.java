@@ -1,7 +1,6 @@
 package nhl.winkel.simulatie;
 
 import java.awt.Point;
-import java.util.concurrent.locks.Lock;
 
 public class SimulatieItem
 {

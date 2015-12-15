@@ -48,11 +48,11 @@ public class Surface extends JPanel
 		int index = 0;
 		for (Pad pad : paden)
 		{
-			g2d.drawString("pad " + String.valueOf(index), 700, height);
+			g2d.drawString("pad " + String.valueOf(index), 715, height);
 			height += 15; index++;
 			for (Product prod : pad.getProducten())
 			{
-				g2d.drawString(prod.getProdNaam(), 700, height);
+				g2d.drawString(prod.getProdNaam(), 715, height);
 				height += 15;
 			}
 		}
@@ -61,20 +61,20 @@ public class Surface extends JPanel
 		Afdeling[] afdelingen = Main.getInstance().getController().getAfdeling();
 		for (Afdeling afdeling : afdelingen)
 		{
-			g2d.drawString("afdeling " + String.valueOf(index), 800, height - padding);
+			g2d.drawString("afdeling " + String.valueOf(index), 815, height - padding);
 			height += 15; index++;
 			for (Product prod : afdeling.getProducten())
 			{
-				g2d.drawString(prod.getProdNaam(), 800, height - padding);
+				g2d.drawString(prod.getProdNaam(), 815, height - padding);
 				height += 15;
 			}
 		}
 		VoordeelPad voordeelPad = Main.getInstance().getController().getVoordeelPad();
-		g2d.drawString("voordeelpad", 800, height - padding);
+		g2d.drawString("voordeelpad", 815, height - padding);
 		height += 15;
 		for (Product prod : voordeelPad.getProducten())
 		{
-			g2d.drawString(prod.getProdNaam(), 800, height - padding);
+			g2d.drawString(prod.getProdNaam(), 815, height - padding);
 			height += 15;
 		}
 	}

@@ -25,6 +25,11 @@ public class Winkelwagen
 	{
 		inhoud.put(prodNr, (inhoud.get(prodNr)+aantal));
 	}
+	
+	public List<Product> getInhoud()
+	{
+		return producten;
+	}
 
 	public Map<Integer, Integer> getInhoudWinkelwagen() 
 	{
