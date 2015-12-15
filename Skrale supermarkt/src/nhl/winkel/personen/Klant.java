@@ -32,7 +32,7 @@ public class Klant extends Persoon
 	{
 		if (boodschappenLijstje.size() == 0) 
 		{
-			setLocation(new Point(25, 13));
+			setLocation(new Point(13, 24));
 		} else
 		{
 			Stelling loca = null;
