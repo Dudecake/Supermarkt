@@ -16,6 +16,7 @@ import nhl.winkel.personen.Oudere;
 import nhl.winkel.personen.Student;
 import nhl.winkel.simulatie.DataLink.Mutatie;
 import nhl.winkel.winkel.Product;
+import nhl.winkel.winkel.Stelling;
 
 public class Main 
 {
@@ -28,6 +29,7 @@ public class Main
 	private int winkelGroote = 25;
 	private char[][] buffer;
 	private char[][] winkel;
+	private Stelling[] stellingen;
 	@SuppressWarnings("unused")
 	private Window window = new Window();
 	private static Main instance;
@@ -36,6 +38,11 @@ public class Main
 	public static Main getInstance()
 	{
 		return instance;
+	}
+	
+	public void setStellingen(Stelling[] stellingen)
+	{
+		this.stellingen = stellingen;
 	}
 	
 	public int getWinkelSize()

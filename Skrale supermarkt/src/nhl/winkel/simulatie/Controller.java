@@ -2,6 +2,7 @@ package nhl.winkel.simulatie;
 
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import nhl.winkel.winkel.Magazijn;
 import nhl.winkel.winkel.Pad;
 import nhl.winkel.winkel.Product;
 import nhl.winkel.winkel.VoordeelPad;
+import nhl.winkel.winkel.Stelling;
 
 public class Controller 
 {
@@ -28,6 +30,7 @@ public class Controller
 		afdeling = new Afdeling[] { new Afdeling(new Point(9, 5)), new Afdeling(new Point(9, 10))};
 		voordeelPad = new VoordeelPad(new Point(9, 15));
 		magazijn = new Magazijn();
+		Main.instance.setStellingen(Controller.concatAll(pad, kassas, afdeling, voordeelpad));
 		initProducten();
 	}
 	
@@ -90,6 +93,23 @@ public class Controller
 	public void inhoudWinkel(Map<Integer, Integer> producten) 
 	{
 
+	}
+	
+	public static <T> T[] concatAll(T[] first, T[]... rest)
+	{
+	int totalLength = first.length;
+	for (T[] array : rest)
+	{
+	totalLe	ngth += array.length;
+	}
+	T[] result = Arrays.copyOf(first, totalLength);
+	int offset = first.length;
+	for (T[] array : rest)
+	{
+		System.arraycopy(array, 0, result, offset, array.length);
+		offset += array.length;
+	}
+  return result;
 	}
 
 	private void initProducten()
