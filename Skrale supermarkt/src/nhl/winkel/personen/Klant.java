@@ -9,6 +9,7 @@ import nhl.winkel.simulatie.Main;
 import nhl.winkel.winkel.Afdeling;
 import nhl.winkel.winkel.Pad;
 import nhl.winkel.winkel.Product;
+import nhl.winkel.winkel.Stelling;
 import nhl.winkel.winkel.Winkelwagen;
 
 public class Klant extends Persoon
@@ -34,7 +35,7 @@ public class Klant extends Persoon
 			setLocation(new Point(25, 13));
 		} else
 		{
-			Object loca = null;
+			Stelling loca = null;
 			int num = boodschappenLijstje.firstEntry().getKey();
 			int aantal = boodschappenLijstje.get(num);
 			switch (num/100)
@@ -104,7 +105,7 @@ public class Klant extends Persoon
 		super.update();
 	}
 
-	private void WilProductPakken(int prodNr, int aantal, Object locatie)
+	private void WilProductPakken(int prodNr, int aantal, Stelling locatie)
 	{
 		List<Product> prods = controller.PaktProduct(prodNr, aantal, locatie);
 		if(prods.size() != 0)
