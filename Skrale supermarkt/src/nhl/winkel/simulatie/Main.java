@@ -18,7 +18,7 @@ import nhl.winkel.simulatie.DataLink.Mutatie;
 import nhl.winkel.winkel.Kassa;
 import nhl.winkel.winkel.Product;
 
-public class Main 
+public class Main extends TimerTask
 {
 	private Timer timer = new Timer();
 	private Random random = new Random();
@@ -85,38 +85,41 @@ public class Main
 	
 	public static void main(String[] args) 
 	{
-		Main p = new Main();
-		instance = p;
-		p.winkel = new char[p.winkelGroote][p.winkelGroote];
-		p.kassas = new ArrayList<>();
-		for (int i = 0; i < p.winkelGroote; i++)
+		instance = new Main();
+		instance.init();
+		instance.timer.scheduleAtFixedRate(instance, 500, 1000);
+	}
+	
+	public void init()
+	{
+		winkel = new char[winkelGroote][winkelGroote];
+		kassas = new ArrayList<>();
+		for (int i = 0; i < winkelGroote; i++)
 		{
-			for (int j = 0; j < p.winkelGroote; j++)
+			for (int j = 0; j < winkelGroote; j++)
 			{
-				if ((i == 0 || i == p.winkelGroote - 1) || (j == 0 || j == p.winkelGroote - 1))
+				if ((i == 0 || i == winkelGroote - 1) || (j == 0 || j == winkelGroote - 1))
 				{
-					if (i < 11 || i > 14) p.winkel[i][j] = '+';
-					else p.winkel[i][j] = '.';
+					if (i < 11 || i > 14) winkel[i][j] = '+';
+					else winkel[i][j] = '.';
 				}
 				else
 				{
-					p.winkel[i][j] = '.';
+					winkel[i][j] = '.';
 				}
 			}
 		}
-		p.controller = new Controller();
-		p.dataLink = new DataLink();
-		p.klanten = new ArrayList<>();
-		p.buffer = p.winkel;
-		p.timer.scheduleAtFixedRate(new TimerTask()
-		{
-			@Override
-			public void run()
-			{
-				instance.update();
-			}
-		}, 500, 1000);
-		p.NieuweKlant();
+		controller = new Controller();
+		dataLink = new DataLink();
+		klanten = new ArrayList<>();
+		buffer = winkel;
+		NieuweKlant();
+	}
+	
+	@Override
+	public void run()
+	{
+		instance.update();
 	}
 
 	public void ProductOp(Integer prodNr)
@@ -142,6 +145,7 @@ public class Main
 	private void update()
 	{
 		winkel = clone(buffer);
+		controller.updateMedewerkers();
 		Klant temp;
 		for (int i = 0; i < klanten.size(); i++)
 		{
@@ -199,10 +203,7 @@ public class Main
 		char[][] res = new char[x.length][x.length];
 		for (int i = 0; i < x.length; i++)
 		{
-			for (int j = 0; j < x.length; j++)
-			{
-				res[i][j] = x[i][j];
-			}
+			System.arraycopy(x[i], 0, res[i], 0, x.length);
 		}
 		return res;
 	}

@@ -46,6 +46,7 @@ public class Medewerker extends Persoon
 			{
 				((Afdeling) locatie).vulBij(prods.get(0),prods.size());
 			}
+			setLocation(locatie.getLocation());
 		}
 	}
 

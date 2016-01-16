@@ -53,6 +53,14 @@ public class Controller
 	{
 		return magazijn;
 	}
+	
+	public void updateMedewerkers()
+	{
+		for (Medewerker med : medewerkers)
+		{
+			med.update();
+		}
+	}
 
 	public void tisOp(int prodNr, Stelling stel)
 	{
